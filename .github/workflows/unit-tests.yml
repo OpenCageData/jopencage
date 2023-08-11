@@ -26,7 +26,7 @@ jobs:
         run: chmod +x gradlew
 
       - name: Cache .gradle
-        uses: actions/cache@v1
+        uses: actions/cache@v3
         with:
           path: .gradle
           key: ${{ runner.os }}-dotgradle-${{ hashFiles('**/build.gradle') }}
@@ -34,7 +34,7 @@ jobs:
             ${{ runner.os }}-dotgradle-
 
       - name: Cache gradle
-        uses: actions/cache@v1
+        uses: actions/cache@v3
         with:
           path: ~/.gradle
           key: ${{ runner.os }}-gradle-${{ hashFiles('**/build.gradle') }}
