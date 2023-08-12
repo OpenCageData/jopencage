@@ -1,4 +1,4 @@
-name: UnitTests
+name: Unit Tests workflow
 
 on:
   push:
@@ -11,7 +11,8 @@ on:
       - CHANGELOG.md
 
 jobs:
-  build:
+  gradle_tests:
+    name: Gradle test
     runs-on: ubuntu-latest
 
     steps:
