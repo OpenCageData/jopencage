@@ -8,6 +8,7 @@ on:
       - '*.*'
     paths-ignore:
       - README.md
+      - CHANGELOG.md
 
 jobs:
   build:
@@ -22,25 +23,10 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: 8
+          cache: 'gradle'
 
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
-
-      - name: Cache .gradle
-        uses: actions/cache@v3
-        with:
-          path: .gradle
-          key: ${{ runner.os }}-dotgradle-${{ hashFiles('**/build.gradle') }}
-          restore-keys: |
-            ${{ runner.os }}-dotgradle-
-
-      - name: Cache gradle
-        uses: actions/cache@v3
-        with:
-          path: ~/.gradle
-          key: ${{ runner.os }}-gradle-${{ hashFiles('**/build.gradle') }}
-          restore-keys: |
-            ${{ runner.os }}-gradle-
 
       - name: Run Tests
         run: ./gradlew -DOPENCAGE_API_KEY=${{ secrets.OPENCAGE_API_KEY }} test
