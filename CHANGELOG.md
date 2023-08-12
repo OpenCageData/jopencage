@@ -1,4 +1,5 @@
 # Changelog
+
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
@@ -6,9 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Chore
+
+- upgrade gradle to 8.2.1
+- updeates dependencies httpClient 5.2.1, jackson 2.15.2, junit 5.10.0
+- CI on OpencageData repository
+
 ## [1.4.1] - 2023-07-03
 
 ### Fixed
+
 - Decimal numbers with large scale are converted to String using the E notation, leading to incorrect results with reverse geocoding.
 - Coerce latitude/longitude to String preventing E notation [#44](https://github.com/moberwasserlechner/jopencage/issues/44) thx [@lpellegr](https://github.com/lpellegr)
 - Chores: Fixed SSL and AllowAllHostNameVerifier [#43](https://github.com/moberwasserlechner/jopencage/pull/43) thx [@damade](https://github.com/damade)
@@ -20,6 +28,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - JCenter is shutting down! Lib was migrated to MavenCentral (#40)
 
 ### Added
+
 - Hold unmapped component fields in a `java.util.Map` (#38) thx [@Dexilon](https://github.com/Dexilon)
 - Add FIPS mapping (#35)
 
@@ -32,26 +41,34 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fix SLF4J Binder in Tests (#36)
 
 ## [1.3.0] - 2019-12-11
+
 ### Added
+
 - CHANGELOG file to keep track of changes directly in the repo
 - Additional fields for components. Like `continent`, `region`, `village`,... (#33, #34)
 - Add support for the `proximity` optional search feature (#31)
 
 ### Changed
+
 - Upgrade to Gradle 6
 
 ### Fixed
+
 - Fix travis CI config
 
 ## [1.2.1] - 2019-02-23
+
 ### Added
+
 - Additional tests (#26)
 
 ### Changed
+
 - Upgrade Gradle
 
 ### Fixed
-- Bug fix bounds on forward request (#27) 
+
+- Bug fix bounds on forward request (#27)
 
 [Unreleased]: https://github.com/moberwasserlechner/jopencage/compare/1.4.1...master
 [1.4.1]: https://github.com/moberwasserlechner/jopencage/compare/1.4.0...1.4.1
