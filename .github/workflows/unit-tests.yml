@@ -44,3 +44,8 @@ jobs:
 
       - name: Run Tests
         run: ./gradlew -DOPENCAGE_API_KEY=${{ secrets.OPENCAGE_API_KEY }} test
+
+      - name: Meterian Scanner
+        uses: MeterianHQ/meterian-github-action@v1.0.13
+        with:
+          oss: true
