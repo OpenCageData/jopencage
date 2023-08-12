@@ -68,7 +68,7 @@ For running the tests you have to use your _OWN_ OpenCage Geocoding API Key. Get
 ## Gradle
 
 ```
-./gradlew wrapper --gradle-version 6.8.3
+./gradlew wrapper --gradle-version 8.2.1
 ```
 
 ## Contribute
