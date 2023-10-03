@@ -11,7 +11,7 @@ Maven
 
 ```xml
   <dependency>
-    <groupId>com.byteowls</groupId>
+    <groupId>com.opencagedata</groupId>
     <artifactId>jopencage</artifactId>
     <version>replace.with.version</version>
   </dependency>
@@ -20,7 +20,7 @@ Maven
 Gradle
 
 ```gradle
-    implementation "com.byteowls:jopencage:REPLACE.WITH.VERSION"
+    implementation "com.opencagedata:jopencage:REPLACE.WITH.VERSION"
 ```
 
 ### Example
