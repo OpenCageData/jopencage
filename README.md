@@ -1,6 +1,6 @@
 # JOpenCage
 
-[![Maven Central](https://img.shields.io/maven-central/v/com.byteowls/jopencage.svg?label=Maven%20Central)](https://central.sonatype.com/artifact/com.byteowls/jopencage)
+[![Maven Central](https://img.shields.io/maven-central/v/com.opencagedata/jopencage.svg?label=Maven%20Central)](https://central.sonatype.com/artifact/com.opencagedata/jopencage)
 [![UnitTests](https://github.com/OpenCageData/jopencage/actions/workflows/unit-tests.yml/badge.svg?branch=master)](https://github.com/OpenCageData/jopencage/actions)
 
 This api provides a java client to the OpenCage geocoding service. https://opencagedata.com/api
