@@ -29,14 +29,27 @@ java {
 	withSourcesJar()
 }
 
+
+javadoc {
+	if (JavaVersion.current().isJava9Compatible()) {
+		options.addBooleanOption('html5', true)
+	}
+}
+
+test {
+	useJUnitPlatform()
+	systemProperties = System.properties
+}
+
 publishing {
 	publications {
 		mavenJava(MavenPublication) {
 			from components.java
+
 			pom {
 				name = 'JOpenCage'
 				description = 'Java Client for the OpenCage REST API'
-				url = 'https://github.com/moberwasserlechner/jopencage'
+				url = 'https://github.com/opencagedata/jopencage'
 				licenses {
 					license {
 						name = 'The Apache License, Version 2.0'
@@ -51,9 +64,9 @@ publishing {
 					}
 				}
 				scm {
-					connection = 'scm:git:git://github.com/moberwasserlechner/jopencage.git'
-					developerConnection = 'scm:git:ssh://github.com/moberwasserlechner/jopencage.git'
-					url = 'https://github.com/moberwasserlechner/jopencage'
+					connection = 'scm:git:git://github.com/opencagedata/jopencage.git'
+					developerConnection = 'scm:git:ssh://github.com/opencagedata/jopencage.git'
+					url = 'https://github.com/opencagedata/jopencage'
 				}
 			}
 		}
@@ -73,21 +86,10 @@ publishing {
 }
 
 signing {
-	def signingKeyId = (String) project.findProperty("MAVEN_SIGNING_KEY_ID") ?: System.getenv("MAVEN_SIGNING_KEY_ID")
-	def signingKey = (String) project.findProperty("MAVEN_SIGNING_KEY") ?: System.getenv("MAVEN_SIGNING_KEY")
-	def signingPassword = (String) project.findProperty("MAVEN_SIGNING_PASSWORD") ?: System.getenv("MAVEN_SIGNING_PASSWORD")
-	useInMemoryPgpKeys(signingKeyId, signingKey, signingPassword)
+//	def signingKeyId = (String) project.findProperty("MAVEN_SIGNING_KEY_ID") ?: System.getenv("MAVEN_SIGNING_KEY_ID")
+//	def signingKey = (String) project.findProperty("MAVEN_SIGNING_KEY") ?: System.getenv("MAVEN_SIGNING_KEY")
+//	def signingPassword = (String) project.findProperty("MAVEN_SIGNING_PASSWORD") ?: System.getenv("MAVEN_SIGNING_PASSWORD")
+//	useInMemoryPgpKeys(signingKeyId, signingKey, signingPassword)
 	sign publishing.publications.mavenJava
 }
 
-
-javadoc {
-	if (JavaVersion.current().isJava9Compatible()) {
-		options.addBooleanOption('html5', true)
-	}
-}
-
-test {
-	useJUnitPlatform()
-	systemProperties = System.properties
-}
