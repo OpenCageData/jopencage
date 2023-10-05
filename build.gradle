@@ -58,9 +58,9 @@ publishing {
 				}
 				developers {
 					developer {
-						id = 'opencagedata'
+						id = 'OpenCageData'
 						name = 'OpenCage Data'
-						email = 'dev@opencagedata.com'
+						email = 'support@opencagedata.com'
 					}
 					developer {
 						id = 'moberwasserlechner'
@@ -79,13 +79,12 @@ publishing {
 	repositories {
 		maven {
 			// change URLs to point to your repos, e.g. http://my.org/repo
-			def releasesRepoUrl = "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/"
-			def snapshotsRepoUrl = "https://s01.oss.sonatype.org/content/repositories/snapshots/"
+			def releasesRepoUrl = "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
+			def snapshotsRepoUrl = "https://oss.sonatype.org/content/repositories/snapshots/"
 			url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
 			credentials {
 				username = project.findProperty("MAVEN_USERNAME") ?: System.getenv("MAVEN_USERNAME")
-				password = project.findProperty("MAVEN_PASSWORD") ?: System.getenv("MAVEN_PASSWORD")
-			}
+				password = project.findProperty("MAVEN_PASSWORD") ?: System.getenv("MAVEN_PASSWORD")			}
 		}
 	}
 }
