@@ -58,6 +58,11 @@ publishing {
 				}
 				developers {
 					developer {
+						id = 'opencagedata'
+						name = 'OpenCage Data'
+						email = 'dev@opencagedata.com'
+					}
+					developer {
 						id = 'moberwasserlechner'
 						name = 'Michael Oberwasserlechner'
 						email = 'm.oberwasserlechner@byteowls.com'
@@ -78,18 +83,14 @@ publishing {
 			def snapshotsRepoUrl = "https://s01.oss.sonatype.org/content/repositories/snapshots/"
 			url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
 			credentials {
-				username = project.findProperty("MAVEN_CENTRAL_USERNAME") ?: System.getenv("MAVEN_CENTRAL_USERNAME")
-				password = project.findProperty("MAVEN_CENTRAL_PASSWORD") ?: System.getenv("MAVEN_CENTRAL_PASSWORD")
+				username = project.findProperty("MAVEN_USERNAME") ?: System.getenv("MAVEN_USERNAME")
+				password = project.findProperty("MAVEN_PASSWORD") ?: System.getenv("MAVEN_PASSWORD")
 			}
 		}
 	}
 }
 
 signing {
-//	def signingKeyId = (String) project.findProperty("MAVEN_SIGNING_KEY_ID") ?: System.getenv("MAVEN_SIGNING_KEY_ID")
-//	def signingKey = (String) project.findProperty("MAVEN_SIGNING_KEY") ?: System.getenv("MAVEN_SIGNING_KEY")
-//	def signingPassword = (String) project.findProperty("MAVEN_SIGNING_PASSWORD") ?: System.getenv("MAVEN_SIGNING_PASSWORD")
-//	useInMemoryPgpKeys(signingKeyId, signingKey, signingPassword)
 	sign publishing.publications.mavenJava
 }
 
