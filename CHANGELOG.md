@@ -7,19 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Chore
+## [1.4.1] - 2023-10-04
 
+### Changed
+
+- on maven central the groupId is now `com.opencagedata`, hence the imports are now using `com.opencagedata`
 - upgrade gradle to 8.2.1
 - updeates dependencies httpClient 5.2.1, jackson 2.15.2, junit 5.10.0
 - CI on OpencageData repository
 
-## [1.4.1] - 2023-07-03
-
 ### Fixed
 
-- Decimal numbers with large scale are converted to String using the E notation, leading to incorrect results with reverse geocoding.
-- Coerce latitude/longitude to String preventing E notation [#44](https://github.com/moberwasserlechner/jopencage/issues/44) thx [@lpellegr](https://github.com/lpellegr)
-- Chores: Fixed SSL and AllowAllHostNameVerifier [#43](https://github.com/moberwasserlechner/jopencage/pull/43) thx [@damade](https://github.com/damade)
+- [@moberwasserlechner]: Decimal numbers with large scale are converted to String using the E notation, leading to incorrect results with reverse geocoding.
+- [@moberwasserlechner]: Coerce latitude/longitude to String preventing E notation [#44](https://github.com/moberwasserlechner/jopencage/issues/44) thx [@lpellegr](https://github.com/lpellegr)
+- [@moberwasserlechner]: Fixed SSL and AllowAllHostNameVerifier [#43](https://github.com/moberwasserlechner/jopencage/pull/43) thx [@damade](https://github.com/damade)
 
 ## [1.4.0] - 2021-04-18
 
