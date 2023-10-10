@@ -58,9 +58,19 @@ publishing {
 				}
 				developers {
 					developer {
+						id = 'OpenCageData'
+						name = 'OpenCage Data'
+						email = 'support@opencagedata.com'
+						organizationUrl = 'https://opencagedata.com'
+						roles = [ 'maintainer' ]
+					}
+				}
+				contributors {
+					contributor {
 						id = 'moberwasserlechner'
 						name = 'Michael Oberwasserlechner'
 						email = 'm.oberwasserlechner@byteowls.com'
+						roles = [ 'former maintainer']
 					}
 				}
 				scm {
@@ -74,22 +84,22 @@ publishing {
 	repositories {
 		maven {
 			// change URLs to point to your repos, e.g. http://my.org/repo
-			def releasesRepoUrl = "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/"
-			def snapshotsRepoUrl = "https://s01.oss.sonatype.org/content/repositories/snapshots/"
+			def releasesRepoUrl = "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
+			def snapshotsRepoUrl = "https://oss.sonatype.org/content/repositories/snapshots/"
 			url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
 			credentials {
-				username = project.findProperty("MAVEN_CENTRAL_USERNAME") ?: System.getenv("MAVEN_CENTRAL_USERNAME")
-				password = project.findProperty("MAVEN_CENTRAL_PASSWORD") ?: System.getenv("MAVEN_CENTRAL_PASSWORD")
+				username = project.findProperty("MAVEN_USERNAME") ?: System.getenv("MAVEN_USERNAME")
+				password = project.findProperty("MAVEN_PASSWORD") ?: System.getenv("MAVEN_PASSWORD")
 			}
 		}
 	}
 }
 
 signing {
-//	def signingKeyId = (String) project.findProperty("MAVEN_SIGNING_KEY_ID") ?: System.getenv("MAVEN_SIGNING_KEY_ID")
-//	def signingKey = (String) project.findProperty("MAVEN_SIGNING_KEY") ?: System.getenv("MAVEN_SIGNING_KEY")
-//	def signingPassword = (String) project.findProperty("MAVEN_SIGNING_PASSWORD") ?: System.getenv("MAVEN_SIGNING_PASSWORD")
-//	useInMemoryPgpKeys(signingKeyId, signingKey, signingPassword)
+	// def signingKeyId = (String) project.findProperty("OSSRH_GPG_SIGNING_KEY_ID") ?: System.getenv("OSSRH_GPG_SIGNING_KEY_ID")
+	// def signingKey = (String) project.findProperty("OSSRH_GPG_SECRET_KEY") ?: System.getenv("OSSRH_GPG_SECRET_KEY")
+	// def signingPassword = (String) project.findProperty("OSSRH_GPG_SECRET_KEY_PASSWORD") ?: System.getenv("OSSRH_GPG_SECRET_KEY_PASSWORD")
+	// useInMemoryPgpKeys(signingKeyId, signingKey, signingPassword)
 	sign publishing.publications.mavenJava
 }
 

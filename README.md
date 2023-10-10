@@ -3,11 +3,19 @@
 [![Maven Central](https://img.shields.io/maven-central/v/com.opencagedata/jopencage.svg?label=Maven%20Central)](https://central.sonatype.com/artifact/com.opencagedata/jopencage)
 [![UnitTests](https://github.com/OpenCageData/jopencage/actions/workflows/unit-tests.yml/badge.svg?branch=master)](https://github.com/OpenCageData/jopencage/actions)
 
-This api provides a java client to the OpenCage geocoding service. https://opencagedata.com/api
+This package provides a Java client to the OpenCage Geocoding API: https://opencagedata.com/api
+
+## Tutorial
+
+You can find a comprehensive tutorial for using this package [on the OpenCage site](https://opencagedata.com/tutorials/geocode-in-java).
+
+## Getting started
+
+Signup for a [free-trial API Key](https://opencagedata.com/users/sign_up).
 
 ## Usage
 
-Maven
+**Maven**
 
 ```xml
   <dependency>
@@ -17,7 +25,7 @@ Maven
   </dependency>
 ```
 
-Gradle
+**Gradle**
 
 ```gradle
     implementation "com.opencagedata:jopencage:REPLACE.WITH.VERSION"
