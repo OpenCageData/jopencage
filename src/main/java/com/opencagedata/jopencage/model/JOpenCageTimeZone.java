@@ -7,6 +7,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 
 /**
+ * JOpenCageTimeZone
+ *
  * @author michael@byteowls.com
  */
 @JsonInclude(Include.NON_NULL)
@@ -23,22 +25,42 @@ public class JOpenCageTimeZone {
     @JsonProperty("short_name")
     private String shortName;
 
+    /**
+     * Name
+     * @return String
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * Now in DST
+     * @return int
+     */
     public int getNowInDst() {
         return nowInDst;
     }
 
+    /**
+     * Offset Sec
+     * @return int
+     */
     public int getOffsetSec() {
         return offsetSec;
     }
 
+    /**
+     * Offset
+     * @return int
+     */
     public int getOffsetString() {
         return offsetString;
     }
 
+    /**
+     * Short name
+     * @return String
+     */
     public String getShortName() {
         return shortName;
     }

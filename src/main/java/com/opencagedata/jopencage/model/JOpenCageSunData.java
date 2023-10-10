@@ -5,7 +5,11 @@ import com.opencagedata.jopencage.support.UnixTimestampDeserializer;
 
 import java.util.Date;
 
-
+/**
+ * JOpenCageSunData
+ *
+ * @author michael@byteowls.com
+ */
 public class JOpenCageSunData {
 
     @JsonDeserialize(using = UnixTimestampDeserializer.class)
@@ -19,6 +23,8 @@ public class JOpenCageSunData {
 
     /**
      * Value represents what is typically reported as sunrise/set
+     *
+     * @return Date
      */
     public Date getApparent() {
         return apparent;
@@ -26,6 +32,8 @@ public class JOpenCageSunData {
 
     /**
      * Value represents when sky is completely dark/light
+     *
+     * @return Date
      */
     public Date getAstronomical() {
         return astronomical;
@@ -33,6 +41,8 @@ public class JOpenCageSunData {
 
     /**
      * Value represents when a person can read / no longer read
+     *
+     * @return Date
      */
     public Date getCivil() {
         return civil;
@@ -40,6 +50,8 @@ public class JOpenCageSunData {
 
     /**
      * Value represents when navigation using a sea horizon possible/no longer possible
+     *
+     * @return Date
      */
     public Date getNautical() {
         return nautical;

@@ -5,12 +5,13 @@ import java.util.Map;
 
 
 /**
+ * JOpenCageRequest
+ *
  * @author moberwasserlechner
  */
 public abstract class JOpenCageRequest {
 
     private String subkey;
-
     private String language; // defaults to en
     private Integer limit;
     private Integer minConfidence;

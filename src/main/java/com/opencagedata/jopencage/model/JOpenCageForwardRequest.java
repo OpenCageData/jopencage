@@ -5,6 +5,11 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * JOpenCageForwardRequest
+ *
+ * @author michael@byteowls.com
+ */
 public class JOpenCageForwardRequest extends JOpenCageRequest {
 
     /**
@@ -29,6 +34,10 @@ public class JOpenCageForwardRequest extends JOpenCageRequest {
     private final List<String> queryParts = new ArrayList<>();
     private String queryPartSeparator = ",";
 
+    /**
+     * JOpenCageForwardRequest
+     * @param query the query
+     */
     public JOpenCageForwardRequest(String query) {
         if (query == null) {
             throw new IllegalArgumentException("Query must not null!");
@@ -36,6 +45,11 @@ public class JOpenCageForwardRequest extends JOpenCageRequest {
         this.queryParts.add(query);
     }
 
+    /**
+     * JOpenCageForwardRequest
+     *
+     * @param queryParts parameters
+     */
     public JOpenCageForwardRequest(String... queryParts) {
         if (queryParts == null || queryParts.length <= 0) {
             throw new IllegalArgumentException("queryParts must not null!");
@@ -43,6 +57,10 @@ public class JOpenCageForwardRequest extends JOpenCageRequest {
         this.queryParts.addAll(Arrays.asList(queryParts));
     }
 
+    /**
+     * Map of Parameters
+     * @return Map
+     */
     public Map<String, String> getParameter() {
         Map<String, String> parameter = super.getParameter();
         StringBuilder sb = new StringBuilder();
@@ -74,11 +92,18 @@ public class JOpenCageForwardRequest extends JOpenCageRequest {
     }
 
 
+    /**
+     * Bounds
+     * @return JOpenCageBounds
+     */
     public JOpenCageBounds getBounds() {
         return bounds;
     }
 
-
+    /**
+     * Set Bounds
+     * @param bounds JOpenCageBounds
+     */
     public void setBounds(JOpenCageBounds bounds) {
         this.bounds = bounds;
     }
@@ -97,7 +122,6 @@ public class JOpenCageForwardRequest extends JOpenCageRequest {
      * @param northEastLng north east longitude
      * @param northEastLat north east latitude
      */
-
     public void setBounds(Double southWestLng, Double southWestLat, Double northEastLng, Double northEastLat) {
 
         bounds = new JOpenCageBounds();

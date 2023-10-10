@@ -12,10 +12,18 @@ public class JOpenCageDMS {
     private String lat;
     private String lng;
 
+    /**
+     * Latitude
+     * @return String
+     */
     public String getLat() {
         return lat;
     }
 
+    /**
+     * Longitude
+     * @return String
+     */
     public String getLng() {
         return lng;
     }
