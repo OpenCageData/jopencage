@@ -1,29 +1,37 @@
 # JOpenCage
 
-[![Maven Central](https://img.shields.io/maven-central/v/com.byteowls/jopencage.svg?label=Maven%20Central)](https://central.sonatype.com/artifact/com.byteowls/jopencage)
+[![Maven Central](https://img.shields.io/maven-central/v/com.opencagedata/jopencage.svg?label=Maven%20Central)](https://central.sonatype.com/artifact/com.opencagedata/jopencage)
 [![UnitTests](https://github.com/OpenCageData/jopencage/actions/workflows/unit-tests.yml/badge.svg?branch=master)](https://github.com/OpenCageData/jopencage/actions)
 
 [![security status](https://www.meterian.io/badge/gh/OpenCageData/jopencage/security?branch=master)](https://www.meterian.io/report/gh/OpenCageData/jopencage)
 [![stability status](https://www.meterian.io/badge/gh/OpenCageData/jopencage/stability?branch=master)](https://www.meterian.io/report/gh/OpenCageData/jopencage)
 
-This api provides a java client to the OpenCage geocoding service. https://opencagedata.com/api
+This package provides a Java client to the OpenCage Geocoding API: https://opencagedata.com/api
+
+## Tutorial
+
+You can find a comprehensive tutorial for using this package [on the OpenCage site](https://opencagedata.com/tutorials/geocode-in-java).
+
+## Getting started
+
+Signup for a [free-trial API Key](https://opencagedata.com/users/sign_up).
 
 ## Usage
 
-Maven
+**Maven**
 
 ```xml
   <dependency>
-    <groupId>com.byteowls</groupId>
+    <groupId>com.opencagedata</groupId>
     <artifactId>jopencage</artifactId>
     <version>replace.with.version</version>
   </dependency>
 ```
 
-Gradle
+**Gradle**
 
 ```gradle
-    implementation "com.byteowls:jopencage:REPLACE.WITH.VERSION"
+    implementation "com.opencagedata:jopencage:REPLACE.WITH.VERSION"
 ```
 
 ### Example
