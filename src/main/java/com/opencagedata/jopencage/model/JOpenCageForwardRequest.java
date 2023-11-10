@@ -5,6 +5,11 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * JOpenCageForwardRequest
+ *
+ * @author michael@byteowls.com
+ */
 public class JOpenCageForwardRequest extends JOpenCageRequest {
 
     /**
@@ -29,6 +34,11 @@ public class JOpenCageForwardRequest extends JOpenCageRequest {
     private final List<String> queryParts = new ArrayList<>();
     private String queryPartSeparator = ",";
 
+    /**
+     * JOpenCageForwardRequest
+     * 
+     * @param query the query
+     */
     public JOpenCageForwardRequest(String query) {
         if (query == null) {
             throw new IllegalArgumentException("Query must not null!");
@@ -36,6 +46,11 @@ public class JOpenCageForwardRequest extends JOpenCageRequest {
         this.queryParts.add(query);
     }
 
+    /**
+     * JOpenCageForwardRequest
+     *
+     * @param queryParts parameters
+     */
     public JOpenCageForwardRequest(String... queryParts) {
         if (queryParts == null || queryParts.length <= 0) {
             throw new IllegalArgumentException("queryParts must not null!");
@@ -43,6 +58,11 @@ public class JOpenCageForwardRequest extends JOpenCageRequest {
         this.queryParts.addAll(Arrays.asList(queryParts));
     }
 
+    /**
+     * Map of Parameters
+     * 
+     * @return Map
+     */
     public Map<String, String> getParameter() {
         Map<String, String> parameter = super.getParameter();
         StringBuilder sb = new StringBuilder();
@@ -58,9 +78,9 @@ public class JOpenCageForwardRequest extends JOpenCageRequest {
 
         if (bounds != null) {
             String boundsSTr = bounds.getSouthwest().getLng()
-                + "," + bounds.getSouthwest().getLat()
-                + "," + bounds.getNortheast().getLng()
-                + "," + bounds.getNortheast().getLat();
+                    + "," + bounds.getSouthwest().getLat()
+                    + "," + bounds.getNortheast().getLng()
+                    + "," + bounds.getNortheast().getLat();
             parameter.put("bounds", boundsSTr);
         }
 
@@ -73,12 +93,20 @@ public class JOpenCageForwardRequest extends JOpenCageRequest {
         return parameter;
     }
 
-
+    /**
+     * Bounds
+     * 
+     * @return JOpenCageBounds
+     */
     public JOpenCageBounds getBounds() {
         return bounds;
     }
 
-
+    /**
+     * Set Bounds
+     * 
+     * @param bounds JOpenCageBounds
+     */
     public void setBounds(JOpenCageBounds bounds) {
         this.bounds = bounds;
     }
@@ -87,8 +115,10 @@ public class JOpenCageForwardRequest extends JOpenCageRequest {
      * Provides the geocoder with a hint to the region that the query resides in.
      * This value will restrict the possible results to the supplied region.
      * The value of the bounds parameter should be specified as
-     * two coordinate points forming the south-west and north-east corners of a bounding box.
-     * For example: bounds=-0.563160,51.280430,0.278970,51.683979 (min lon, min lat, max lon, max lat).
+     * two coordinate points forming the south-west and north-east corners of a
+     * bounding box.
+     * For example: bounds=-0.563160,51.280430,0.278970,51.683979 (min lon, min lat,
+     * max lon, max lat).
      * <p>
      * Values that are not valid coordinates are ignored.
      *
@@ -97,7 +127,6 @@ public class JOpenCageForwardRequest extends JOpenCageRequest {
      * @param northEastLng north east longitude
      * @param northEastLat north east latitude
      */
-
     public void setBounds(Double southWestLng, Double southWestLat, Double northEastLng, Double northEastLat) {
 
         bounds = new JOpenCageBounds();
@@ -113,6 +142,11 @@ public class JOpenCageForwardRequest extends JOpenCageRequest {
         bounds.setSouthwest(sw);
     }
 
+    /**
+     * restrict to Country Code
+     * 
+     * @return String
+     */
     public String getRestrictToCountryCode() {
         return restrictToCountryCode;
     }
@@ -120,20 +154,22 @@ public class JOpenCageForwardRequest extends JOpenCageRequest {
     /**
      * Restricts the results to the given country.
      *
-     * @param restrictToCountryCode 2 character code as defined by the ISO 3166-1 Alpha 2 standard. E.g. 'gb' for the United Kingdom, fr for France
+     * @param restrictToCountryCode 2 character code as defined by the ISO 3166-1
+     *                              Alpha 2 standard. E.g. 'gb' for the United
+     *                              Kingdom, fr for France
      */
     public void setRestrictToCountryCode(String restrictToCountryCode) {
         this.restrictToCountryCode = restrictToCountryCode;
     }
 
     /**
-     * If you use the query part constructor this String separates the query parts from each other. Defaults to a colon.
+     * If you use the query part constructor this String separates the query parts
+     * from each other. Defaults to a colon.
      *
      * @param queryPartSeparator the query part separator. Defaults to a colon.
      */
     public void setQueryPartSeparator(String queryPartSeparator) {
         this.queryPartSeparator = queryPartSeparator;
     }
-
 
 }

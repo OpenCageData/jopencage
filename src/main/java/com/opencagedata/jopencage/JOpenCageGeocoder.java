@@ -23,7 +23,11 @@ import com.opencagedata.jopencage.model.JOpenCageRequest;
 import com.opencagedata.jopencage.model.JOpenCageResponse;
 import com.opencagedata.jopencage.model.JOpenCageReverseRequest;
 
-
+/**
+ * JOpenCageGeocoder
+ *
+ * @author michael@byteowls.com
+ */
 public class JOpenCageGeocoder {
 
     private final static Logger LOGGER = LoggerFactory.getLogger(JOpenCageGeocoder.class);
@@ -40,18 +44,39 @@ public class JOpenCageGeocoder {
     private String format = "json";
     private String apiKey;
 
+    /**
+     * JOpenCageGeocoder
+     * @param apiKey your Opencage Data API Key
+     */
     public JOpenCageGeocoder(String apiKey) {
         this.apiKey = apiKey;
     }
 
+    /**
+     * forward geocoding
+     * @param request the request
+     * @return JOpenCageResponse
+     */
     public JOpenCageResponse forward(JOpenCageForwardRequest request) {
         return sendRequest(request);
     }
 
+    /**
+     * reverse geocoding
+     * @param request the request
+     * @return JOpenCageResponse
+     */
     public JOpenCageResponse reverse(JOpenCageReverseRequest request) {
         return sendRequest(request);
     }
 
+    /**
+     * buildUri
+     *
+     * @param jOpenCageRequest the request
+     * @return URI
+     * @throws URISyntaxException an syntax exception
+     */
     public URI buildUri(JOpenCageRequest jOpenCageRequest) throws URISyntaxException {
         URIBuilder uriBuilder = new URIBuilder();
         if (httpsEnabled) {
@@ -124,30 +149,58 @@ public class JOpenCageGeocoder {
         return null;
     }
 
+    /**
+     * Is HTTPS enabled?
+     * @return boolean
+     */
     public boolean isHttpsEnabled() {
         return httpsEnabled;
     }
 
+    /**
+     * Toggle HTTPS usage
+     * @param httpsEnabled enable or disable the HTTPS usage
+     */
     public void setHttpsEnabled(boolean httpsEnabled) {
         this.httpsEnabled = httpsEnabled;
     }
 
+    /**
+     * API Host
+     * @return host
+     */
     public String getHost() {
         return host;
     }
 
+    /**
+     * Set API Host
+     * @param host the host
+     */
     public void setHost(String host) {
         this.host = host;
     }
 
+    /**
+     * API path
+     * @return String the path
+     */
     public String getPath() {
         return path;
     }
 
+    /**
+     * Set API path
+     * @param path the path
+     */
     public void setPath(String path) {
         this.path = path;
     }
 
+    /**
+     * API Key
+     * @return String the API Key
+     */
     public String getApiKey() {
         return apiKey;
     }

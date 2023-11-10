@@ -9,6 +9,11 @@ import com.opencagedata.jopencage.support.UnixTimestampDeserializer;
 
 import java.util.Date;
 
+/**
+ * JOpenCageTimestamp
+ *
+ * @author michael@byteowls.com
+ */
 @JsonInclude(Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class JOpenCageTimestamp {
@@ -17,6 +22,10 @@ public class JOpenCageTimestamp {
     @JsonProperty("created_unix")
     private Date createdAt;
 
+    /**
+     * Created At
+     * @return Date
+     */
     public Date getCreatedAt() {
         return createdAt;
     }

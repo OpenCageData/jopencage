@@ -5,7 +5,9 @@ import com.opencagedata.jopencage.support.UnixTimestampDeserializer;
 
 import java.util.Date;
 
-
+/**
+ * JOpenCageRate
+ */
 public class JOpenCageRate {
 
     private int limit;
