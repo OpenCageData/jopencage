@@ -84,7 +84,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Bug fix bounds on forward request (#27)
 
 [Unreleased]: https://github.com/OpenCageData/jopencage/compare/2.1.0...master
-[2.1.0]: https://github.com/OpenCageData/jopencage/compare/2.1.0...2.0.0
+[2.1.0]: https://github.com/OpenCageData/jopencage/compare/2.0.0...2.1.0
 [2.0.0]: https://github.com/OpenCageData/jopencage/compare/1.4.1...2.0.0
 [1.4.1]: https://github.com/OpenCageData/jopencage/compare/1.4.0...1.4.1
 [1.4.0]: https://github.com/OpenCageData/jopencage/compare/1.3.0...1.4.0
