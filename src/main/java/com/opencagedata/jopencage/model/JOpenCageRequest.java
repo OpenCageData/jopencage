@@ -20,6 +20,9 @@ public abstract class JOpenCageRequest {
     private boolean abbrv;
     private boolean noRecord;
     private boolean onlyNominatim;
+    private boolean roadinfo;
+    private boolean addressOnly;
+    private boolean addRequest;
 
     public Map<String, String> getParameter() {
         Map<String, String> parameter = new HashMap<>();
@@ -52,6 +55,15 @@ public abstract class JOpenCageRequest {
         }
         if (onlyNominatim) {
             parameter.put("only_nominatim", "1");
+        }
+        if (roadinfo) {
+            parameter.put("roadinfo", "1");
+        }
+        if (addressOnly) {
+            parameter.put("address_only", "1");
+        }
+        if (addRequest) {
+            parameter.put("add_request", "1");
         }
         return parameter;
     }
@@ -233,11 +245,66 @@ public abstract class JOpenCageRequest {
     }
 
     /**
-     *
      * @param onlyNominatim onlyNominatim
      */
     public void setOnlyNominatim(boolean onlyNominatim) {
         this.onlyNominatim = onlyNominatim;
     }
 
+    /**
+     * isRoadinfo
+     *
+     * @return boolean
+     */
+    public boolean isRoadinfo() {
+        return roadinfo;
+    }
+
+    /**
+     * Sets the requests with roadinfo parameter
+     * When set to true the behaviour of the geocoder is changed to attempt to match the nearest road (as opposed to address).
+     *
+     * @param roadinfo roadinfo input parameter
+     */
+    public void setRoadinfo(boolean roadinfo) {
+        this.roadinfo = roadinfo;
+    }
+
+    /**
+     * isAddressOnly
+     *
+     * @return boolean
+     */
+    public boolean isAddressOnly() {
+        return addressOnly;
+    }
+
+    /**
+     * Set the requests with address_only
+     * When set to true we include only the address (exluding POI names) in the formatted string we return.
+     *
+     * @param addressOnly addressOnly input parameter
+     */
+    public void setAddressOnly(boolean addressOnly) {
+        this.addressOnly = addressOnly;
+    }
+
+    /**
+     * isAddRequest
+     *
+     * @return boolean
+     */
+    public boolean isAddRequest() {
+        return addRequest;
+    }
+
+    /**
+     * Set the requests with add_request
+     * When set to 1 the various request parameters are added to the response for ease of debugging.
+     *
+     * @param addRequest addRequest
+     */
+    public void setAddRequest(boolean addRequest) {
+        this.addRequest = addRequest;
+    }
 }
