@@ -5,20 +5,29 @@ import java.text.DecimalFormatSymbols;
 import java.util.Locale;
 import java.util.Map;
 
+/**
+ * JOpenCageReverseRequest
+ *
+ */
 public class JOpenCageReverseRequest extends JOpenCageRequest {
 
     // A latitude/longitude number with seventh decimal place is worth up to 1.11cm
-    private static final ThreadLocal<DecimalFormat> FORMATTER =
-        ThreadLocal.withInitial(() -> {
-            DecimalFormat decimalFormat = new DecimalFormat("##.#######");
-            // make sure the formatter does not use the system language
-            decimalFormat.setDecimalFormatSymbols(DecimalFormatSymbols.getInstance(Locale.ENGLISH));
-            return decimalFormat;
-        });
+    private static final ThreadLocal<DecimalFormat> FORMATTER = ThreadLocal.withInitial(() -> {
+        DecimalFormat decimalFormat = new DecimalFormat("##.#######");
+        // make sure the formatter does not use the system language
+        decimalFormat.setDecimalFormatSymbols(DecimalFormatSymbols.getInstance(Locale.ENGLISH));
+        return decimalFormat;
+    });
 
     private final Double latitude;
     private final Double longitude;
 
+    /**
+     * ctor
+     *
+     * @param latitude latitude
+     * @param longitude longitude
+     */
     public JOpenCageReverseRequest(Double latitude, Double longitude) {
         if (latitude == null || longitude == null) {
             throw new IllegalArgumentException("Both latitude and longitude must not be null!");
@@ -27,6 +36,11 @@ public class JOpenCageReverseRequest extends JOpenCageRequest {
         this.longitude = longitude;
     }
 
+    /**
+     * Parameters
+     *
+     * @return Map
+     */
     public Map<String, String> getParameter() {
         Map<String, String> parameter = super.getParameter();
         final DecimalFormat decimalFormat = FORMATTER.get();

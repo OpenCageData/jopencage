@@ -1,6 +1,5 @@
 package com.opencagedata.jopencage.model;
 
-
 /**
  * JOpenCageLatLng
  *
@@ -13,6 +12,7 @@ public class JOpenCageLatLng {
 
     /**
      * Latitude
+     * 
      * @return Double
      */
     public Double getLat() {
@@ -21,6 +21,7 @@ public class JOpenCageLatLng {
 
     /**
      * Set Latitude
+     * 
      * @param lat the latitude
      */
     public void setLat(Double lat) {
@@ -29,6 +30,7 @@ public class JOpenCageLatLng {
 
     /**
      * Longitude
+     * 
      * @return Double
      */
     public Double getLng() {
@@ -37,6 +39,7 @@ public class JOpenCageLatLng {
 
     /**
      * Set Longitude
+     * 
      * @param lng the longitude
      */
     public void setLng(Double lng) {

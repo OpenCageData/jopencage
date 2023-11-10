@@ -36,6 +36,7 @@ public class JOpenCageForwardRequest extends JOpenCageRequest {
 
     /**
      * JOpenCageForwardRequest
+     * 
      * @param query the query
      */
     public JOpenCageForwardRequest(String query) {
@@ -59,6 +60,7 @@ public class JOpenCageForwardRequest extends JOpenCageRequest {
 
     /**
      * Map of Parameters
+     * 
      * @return Map
      */
     public Map<String, String> getParameter() {
@@ -76,9 +78,9 @@ public class JOpenCageForwardRequest extends JOpenCageRequest {
 
         if (bounds != null) {
             String boundsSTr = bounds.getSouthwest().getLng()
-                + "," + bounds.getSouthwest().getLat()
-                + "," + bounds.getNortheast().getLng()
-                + "," + bounds.getNortheast().getLat();
+                    + "," + bounds.getSouthwest().getLat()
+                    + "," + bounds.getNortheast().getLng()
+                    + "," + bounds.getNortheast().getLat();
             parameter.put("bounds", boundsSTr);
         }
 
@@ -91,9 +93,9 @@ public class JOpenCageForwardRequest extends JOpenCageRequest {
         return parameter;
     }
 
-
     /**
      * Bounds
+     * 
      * @return JOpenCageBounds
      */
     public JOpenCageBounds getBounds() {
@@ -102,6 +104,7 @@ public class JOpenCageForwardRequest extends JOpenCageRequest {
 
     /**
      * Set Bounds
+     * 
      * @param bounds JOpenCageBounds
      */
     public void setBounds(JOpenCageBounds bounds) {
@@ -112,8 +115,10 @@ public class JOpenCageForwardRequest extends JOpenCageRequest {
      * Provides the geocoder with a hint to the region that the query resides in.
      * This value will restrict the possible results to the supplied region.
      * The value of the bounds parameter should be specified as
-     * two coordinate points forming the south-west and north-east corners of a bounding box.
-     * For example: bounds=-0.563160,51.280430,0.278970,51.683979 (min lon, min lat, max lon, max lat).
+     * two coordinate points forming the south-west and north-east corners of a
+     * bounding box.
+     * For example: bounds=-0.563160,51.280430,0.278970,51.683979 (min lon, min lat,
+     * max lon, max lat).
      * <p>
      * Values that are not valid coordinates are ignored.
      *
@@ -137,6 +142,11 @@ public class JOpenCageForwardRequest extends JOpenCageRequest {
         bounds.setSouthwest(sw);
     }
 
+    /**
+     * restrict to Country Code
+     * 
+     * @return String
+     */
     public String getRestrictToCountryCode() {
         return restrictToCountryCode;
     }
@@ -144,20 +154,22 @@ public class JOpenCageForwardRequest extends JOpenCageRequest {
     /**
      * Restricts the results to the given country.
      *
-     * @param restrictToCountryCode 2 character code as defined by the ISO 3166-1 Alpha 2 standard. E.g. 'gb' for the United Kingdom, fr for France
+     * @param restrictToCountryCode 2 character code as defined by the ISO 3166-1
+     *                              Alpha 2 standard. E.g. 'gb' for the United
+     *                              Kingdom, fr for France
      */
     public void setRestrictToCountryCode(String restrictToCountryCode) {
         this.restrictToCountryCode = restrictToCountryCode;
     }
 
     /**
-     * If you use the query part constructor this String separates the query parts from each other. Defaults to a colon.
+     * If you use the query part constructor this String separates the query parts
+     * from each other. Defaults to a colon.
      *
      * @param queryPartSeparator the query part separator. Defaults to a colon.
      */
     public void setQueryPartSeparator(String queryPartSeparator) {
         this.queryPartSeparator = queryPartSeparator;
     }
-
 
 }

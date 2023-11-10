@@ -1,6 +1,5 @@
 package com.opencagedata.jopencage.model;
 
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -38,9 +37,9 @@ public class JOpenCageCurrency {
     @JsonProperty("thousands_separator")
     private String thousandsSeparator;
 
-
     /**
      * Alternate Symbols
+     * 
      * @return List
      */
     public List<String> getAlternateSymbols() {
@@ -49,6 +48,7 @@ public class JOpenCageCurrency {
 
     /**
      * Decimal Mark
+     * 
      * @return String
      */
     public String getDecimalMark() {
@@ -57,6 +57,7 @@ public class JOpenCageCurrency {
 
     /**
      * Html Entity
+     * 
      * @return String
      */
     public String getHtmlEntity() {
@@ -65,6 +66,7 @@ public class JOpenCageCurrency {
 
     /**
      * ISO Code
+     * 
      * @return String
      */
     public String getIsoCode() {
@@ -73,6 +75,7 @@ public class JOpenCageCurrency {
 
     /**
      * ISO Numeric
+     * 
      * @return int
      */
     public int getIsoNumeric() {
@@ -81,6 +84,7 @@ public class JOpenCageCurrency {
 
     /**
      * Name
+     * 
      * @return String
      */
     public String getName() {
@@ -89,6 +93,7 @@ public class JOpenCageCurrency {
 
     /**
      * Smallest Denomination
+     * 
      * @return int
      */
     public int getSmallestDenomination() {
@@ -97,6 +102,7 @@ public class JOpenCageCurrency {
 
     /**
      * Sub unit
+     * 
      * @return String
      */
     public String getSubunit() {
@@ -105,6 +111,7 @@ public class JOpenCageCurrency {
 
     /**
      * Subunit to Unit
+     * 
      * @return int
      */
     public int getSubunitToUnit() {
@@ -113,6 +120,7 @@ public class JOpenCageCurrency {
 
     /**
      * Symbol
+     * 
      * @return String
      */
     public String getSymbol() {
@@ -121,6 +129,7 @@ public class JOpenCageCurrency {
 
     /**
      * is Symbol first?
+     * 
      * @return boolean
      */
     public boolean isSymbolFirst() {
@@ -129,6 +138,7 @@ public class JOpenCageCurrency {
 
     /**
      * The thousand separator
+     * 
      * @return String
      */
     public String getThousandsSeparator() {

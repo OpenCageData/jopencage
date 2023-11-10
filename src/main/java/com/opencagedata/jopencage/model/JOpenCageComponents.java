@@ -58,6 +58,7 @@ public class JOpenCageComponents {
 
     /**
      * ISO-3166-1
+     * 
      * @return String
      * @deprecated use {@link #getIso31661Alpha2()} instead
      */
@@ -67,6 +68,7 @@ public class JOpenCageComponents {
 
     /**
      * ISO 3166-1 alpha-2
+     * 
      * @return String
      */
     public String getIso31661Alpha2() {
@@ -75,6 +77,7 @@ public class JOpenCageComponents {
 
     /**
      * ISO 3166-1 alpha-3
+     * 
      * @return String
      */
     public String getIso31661Alpha3() {
@@ -83,6 +86,7 @@ public class JOpenCageComponents {
 
     /**
      * Type
+     * 
      * @return String
      */
     public String getType() {
@@ -91,6 +95,7 @@ public class JOpenCageComponents {
 
     /**
      * Continent
+     * 
      * @return String
      */
     public String getContinent() {
@@ -99,6 +104,7 @@ public class JOpenCageComponents {
 
     /**
      * City
+     * 
      * @return String
      */
     public String getCity() {
@@ -107,6 +113,7 @@ public class JOpenCageComponents {
 
     /**
      * City / District
+     * 
      * @return String
      */
     public String getCityDistrict() {
@@ -115,6 +122,7 @@ public class JOpenCageComponents {
 
     /**
      * Country
+     * 
      * @return String
      */
     public String getCountry() {
@@ -123,6 +131,7 @@ public class JOpenCageComponents {
 
     /**
      * Country code
+     * 
      * @return String
      */
     public String getCountryCode() {
@@ -131,6 +140,7 @@ public class JOpenCageComponents {
 
     /**
      * County
+     * 
      * @return String
      */
     public String getCounty() {
@@ -139,6 +149,7 @@ public class JOpenCageComponents {
 
     /**
      * Pedestrian
+     * 
      * @return String
      */
     public String getPedestrian() {
@@ -147,6 +158,7 @@ public class JOpenCageComponents {
 
     /**
      * Postcode
+     * 
      * @return String
      */
     public String getPostcode() {
@@ -155,6 +167,7 @@ public class JOpenCageComponents {
 
     /**
      * Road
+     * 
      * @return String
      */
     public String getRoad() {
@@ -163,6 +176,7 @@ public class JOpenCageComponents {
 
     /**
      * Road type
+     * 
      * @return String
      */
     public String getRoadType() {
@@ -171,6 +185,7 @@ public class JOpenCageComponents {
 
     /**
      * House Number
+     * 
      * @return String
      */
     public String getHouseNumber() {
@@ -179,6 +194,7 @@ public class JOpenCageComponents {
 
     /**
      * Neighbourhood
+     * 
      * @return String
      */
     public String getNeighbourhood() {
@@ -187,6 +203,7 @@ public class JOpenCageComponents {
 
     /**
      * Stage
+     * 
      * @return String
      */
     public String getState() {
@@ -195,6 +212,7 @@ public class JOpenCageComponents {
 
     /**
      * State code
+     * 
      * @return String
      */
     public String getStateCode() {
@@ -203,6 +221,7 @@ public class JOpenCageComponents {
 
     /**
      * State District
+     * 
      * @return String
      */
     public String getStateDistrict() {
@@ -211,6 +230,7 @@ public class JOpenCageComponents {
 
     /**
      * Region
+     * 
      * @return String
      */
     public String getRegion() {
@@ -219,6 +239,7 @@ public class JOpenCageComponents {
 
     /**
      * Political Union
+     * 
      * @return String
      */
     public String getPoliticalUnion() {
@@ -226,7 +247,8 @@ public class JOpenCageComponents {
     }
 
     /**
-     *  Suburb
+     * Suburb
+     * 
      * @return String
      */
     public String getSuburb() {
@@ -235,6 +257,7 @@ public class JOpenCageComponents {
 
     /**
      * Town
+     * 
      * @return String
      */
     public String getTown() {
@@ -243,6 +266,7 @@ public class JOpenCageComponents {
 
     /**
      * Village
+     * 
      * @return String
      */
     public String getVillage() {
@@ -252,7 +276,7 @@ public class JOpenCageComponents {
     /**
      * Fallback map for unmapped fields
      *
-     * @param key the key
+     * @param key   the key
      * @param value the value
      */
     @JsonAnySetter
@@ -265,6 +289,7 @@ public class JOpenCageComponents {
 
     /**
      * Unmapped Fields
+     * 
      * @return Map
      */
     public Map<String, Object> getUnmappedFields() {

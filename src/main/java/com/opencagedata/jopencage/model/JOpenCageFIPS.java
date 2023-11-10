@@ -12,6 +12,7 @@ public class JOpenCageFIPS {
 
     /**
      * State
+     * 
      * @return String
      */
     public String getState() {
@@ -20,6 +21,7 @@ public class JOpenCageFIPS {
 
     /**
      * County
+     * 
      * @return String
      */
     public String getCounty() {

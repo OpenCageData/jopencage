@@ -1,6 +1,5 @@
 package com.opencagedata.jopencage.model;
 
-
 /**
  * JOpenCageBounds
  */
@@ -11,6 +10,7 @@ public class JOpenCageBounds {
 
     /**
      * get North East bound
+     * 
      * @return JOpenCageLatLng
      */
     public JOpenCageLatLng getNortheast() {
@@ -19,6 +19,7 @@ public class JOpenCageBounds {
 
     /**
      * Set the North East bound
+     * 
      * @param northeast North East bound
      */
     public void setNortheast(JOpenCageLatLng northeast) {
@@ -27,6 +28,7 @@ public class JOpenCageBounds {
 
     /**
      * get South West bound
+     * 
      * @return JOpenCageLatLng
      */
     public JOpenCageLatLng getSouthwest() {
@@ -35,6 +37,7 @@ public class JOpenCageBounds {
 
     /**
      * Set the South West bound
+     * 
      * @param southwest South West bound
      */
     public void setSouthwest(JOpenCageLatLng southwest) {

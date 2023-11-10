@@ -64,7 +64,9 @@ public class JOpenCageAnnotations {
     private JOpenCageSun sun;
 
     /**
-     * The latitude and longitude of the center point of the result in degree minute decimal second format.
+     * The latitude and longitude of the center point of the result in degree minute
+     * decimal second format.
+     * 
      * @return JOpenCageDMS
      */
     public JOpenCageDMS getDMS() {
@@ -72,7 +74,9 @@ public class JOpenCageAnnotations {
     }
 
     /**
-     * Contains a Military Grid Reference System code for the center point of the result. WGS84 datum.
+     * Contains a Military Grid Reference System code for the center point of the
+     * result. WGS84 datum.
+     * 
      * @return String
      */
     public String getMGRS() {
@@ -81,6 +85,7 @@ public class JOpenCageAnnotations {
 
     /**
      * Contains a Maidenhead location reference for the center point of the result.
+     * 
      * @return String
      */
     public String getMaidenhead() {
@@ -88,9 +93,13 @@ public class JOpenCageAnnotations {
     }
 
     /**
-     * Contains the Mercator projection (EPSG 3857, sometimes also referred to as "Spherical Mercator") x and y unit meter values of the center point of the result.
+     * Contains the Mercator projection (EPSG 3857, sometimes also referred to as
+     * "Spherical Mercator") x and y unit meter values of the center point of the
+     * result.
      * <p>
-     * Note: use of Mercator projection on latitudes above/below +70/-70 degrees is strongly discouraged, due to the gross distortions of the projection.
+     * Note: use of Mercator projection on latitudes above/below +70/-70 degrees is
+     * strongly discouraged, due to the gross distortions of the projection.
+     * 
      * @return JOpenCageMercator
      */
     public JOpenCageMercator getMercator() {
@@ -98,8 +107,10 @@ public class JOpenCageAnnotations {
     }
 
     /**
-     * Contains the Ordnance Survey National Grid easting , northing , and gridref of the center point of the result.
+     * Contains the Ordnance Survey National Grid easting , northing , and gridref
+     * of the center point of the result.
      * This annotation is applied only for locations in Great Britain.
+     * 
      * @return JOpenCageOSGB
      */
     public JOpenCageOSGB getOSGB() {
@@ -107,11 +118,15 @@ public class JOpenCageAnnotations {
     }
 
     /**
-     * Contains a key url with an HTTPS url for looking at the center point of the result on openstreetmap.org.
+     * Contains a key url with an HTTPS url for looking at the center point of the
+     * result on openstreetmap.org.
      * <p>
-     * May also contain a editUrl with an HTTPS url for editing the result on openstreetmap.org.
+     * May also contain a editUrl with an HTTPS url for editing the result on
+     * openstreetmap.org.
      * <p>
-     * Note that you may need to zoom in or out to edit and in doing so focus may shift to a different element.
+     * Note that you may need to zoom in or out to edit and in doing so focus may
+     * shift to a different element.
+     * 
      * @return JOpenCageOSM
      */
     public JOpenCageOSM getOSM() {
@@ -120,6 +135,7 @@ public class JOpenCageAnnotations {
 
     /**
      * The telephone calling code for the country of the result.
+     * 
      * @return int
      */
     public int getTelephoneCallingCode() {
@@ -128,6 +144,7 @@ public class JOpenCageAnnotations {
 
     /**
      * Information about the local currency
+     * 
      * @return JOpenCageCurrency
      */
     public JOpenCageCurrency getCurrency() {
@@ -136,6 +153,7 @@ public class JOpenCageAnnotations {
 
     /**
      * Contains a geohash for the center point of the result.
+     * 
      * @return String
      */
     public String getGeoHash() {
@@ -154,7 +172,10 @@ public class JOpenCageAnnotations {
     /**
      * what3word 3 word address.
      * <p>
-     * By default, the words returned are in English, but if the query contained the optional language and it is a language what3words supports, the words will be in that language.
+     * By default, the words returned are in English, but if the query contained the
+     * optional language and it is a language what3words supports, the words will be
+     * in that language.
+     * 
      * @return JOpenCageWhat3Words
      */
     public JOpenCageWhat3Words getWhat3words() {
@@ -162,7 +183,9 @@ public class JOpenCageAnnotations {
     }
 
     /**
-     * Wikidata item for the location. A Wikidata item is a unique identifier used by the Wikimedia Foundation and others.
+     * Wikidata item for the location. A Wikidata item is a unique identifier used
+     * by the Wikimedia Foundation and others.
+     * 
      * @return String
      */
     public String getWikidata() {
@@ -170,7 +193,9 @@ public class JOpenCageAnnotations {
     }
 
     /**
-     * Decimal degrees clockwise from true north to turn to point to the Kaaba (21.4225,39.8262). Calculated using the great circle method.
+     * Decimal degrees clockwise from true north to turn to point to the Kaaba
+     * (21.4225,39.8262). Calculated using the great circle method.
+     * 
      * @return Double
      */
     public Double getQibla() {
@@ -179,6 +204,7 @@ public class JOpenCageAnnotations {
 
     /**
      * Various sun rising and set values.
+     * 
      * @return JOpenCageSun
      */
     public JOpenCageSun getSun() {
@@ -186,7 +212,10 @@ public class JOpenCageAnnotations {
     }
 
     /**
-     * Contains the Irish Transverse Mercator easting and northing of the center point of the result. This annotation is applied only for locations in Ireland.
+     * Contains the Irish Transverse Mercator easting and northing of the center
+     * point of the result. This annotation is applied only for locations in
+     * Ireland.
+     * 
      * @return JOpenCageITM
      */
     public JOpenCageITM getITM() {
@@ -194,7 +223,12 @@ public class JOpenCageAnnotations {
     }
 
     /**
-     * Contains the US Federal Information Processing Standards (FIPS) code for the state (two digit) and county (five digit) of the center point of the result, if we can determine it. This annotation is applied only for locations in the United States and associated territories. The values are strings - not numbers - and can have leading zeros.
+     * Contains the US Federal Information Processing Standards (FIPS) code for the
+     * state (two digit) and county (five digit) of the center point of the result,
+     * if we can determine it. This annotation is applied only for locations in the
+     * United States and associated territories. The values are strings - not
+     * numbers - and can have leading zeros.
+     * 
      * @return JOpenCageFIPS
      */
     public JOpenCageFIPS getFIPS() {

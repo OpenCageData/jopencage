@@ -1,6 +1,5 @@
 package com.opencagedata.jopencage.model;
 
-
 /**
  * The longtiude and latitude of the center point of the result in
  * degree minute decimal second format.
@@ -14,6 +13,7 @@ public class JOpenCageDMS {
 
     /**
      * Latitude
+     * 
      * @return String
      */
     public String getLat() {
@@ -22,6 +22,7 @@ public class JOpenCageDMS {
 
     /**
      * Longitude
+     * 
      * @return String
      */
     public String getLng() {

@@ -3,7 +3,7 @@ package com.opencagedata.jopencage.model;
 /**
  * JOpenCageLicence
  *
- *  @author michael@byteowls.com
+ * @author michael@byteowls.com
  */
 public class JOpenCageLicence {
 
@@ -12,7 +12,8 @@ public class JOpenCageLicence {
 
     /**
      * Name
-      * @return String
+     * 
+     * @return String
      */
     public String getName() {
         return name;
@@ -20,6 +21,7 @@ public class JOpenCageLicence {
 
     /**
      * Set name
+     * 
      * @param name the license name
      */
     public void setName(String name) {
@@ -28,6 +30,7 @@ public class JOpenCageLicence {
 
     /**
      * URL
+     * 
      * @return String the URL
      */
     public String getUrl() {
@@ -36,6 +39,7 @@ public class JOpenCageLicence {
 
     /**
      * Set URL
+     * 
      * @param url the URL
      */
     public void setUrl(String url) {
