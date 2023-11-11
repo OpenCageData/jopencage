@@ -35,10 +35,7 @@ public class JOpenCageGeocoder {
     private final static String OPENCAGE_HOST = "api.opencagedata.com";
     private final static String OPENCAGE_PATH = "/geocode/v1/";
 
-    /**
-     * Not used right now because problems with httpclient
-     */
-    private boolean httpsEnabled = false;
+    private boolean httpsEnabled = true;
     private String host = OPENCAGE_HOST;
     private String path = OPENCAGE_PATH;
     private String format = "json";
@@ -46,6 +43,7 @@ public class JOpenCageGeocoder {
 
     /**
      * JOpenCageGeocoder
+     * 
      * @param apiKey your Opencage Data API Key
      */
     public JOpenCageGeocoder(String apiKey) {
@@ -54,6 +52,7 @@ public class JOpenCageGeocoder {
 
     /**
      * forward geocoding
+     * 
      * @param request the request
      * @return JOpenCageResponse
      */
@@ -63,6 +62,7 @@ public class JOpenCageGeocoder {
 
     /**
      * reverse geocoding
+     * 
      * @param request the request
      * @return JOpenCageResponse
      */
@@ -85,7 +85,7 @@ public class JOpenCageGeocoder {
             uriBuilder.setScheme("http");
         }
         uriBuilder.setHost(host)
-            .setPath(path + format);
+                .setPath(path + format);
 
         for (Entry<String, String> e : jOpenCageRequest.getParameter().entrySet()) {
             if (e.getValue() != null) {
@@ -109,7 +109,7 @@ public class JOpenCageGeocoder {
             try (CloseableHttpClient httpclient = HttpClientBuilder.create().build()) {
                 HttpGet getRequest = new HttpGet(url);
 
-              HttpClientResponseHandler <JOpenCageResponse> rh = new AbstractHttpClientResponseHandler<JOpenCageResponse>() {
+                HttpClientResponseHandler<JOpenCageResponse> rh = new AbstractHttpClientResponseHandler<JOpenCageResponse>() {
                     @Override
                     public JOpenCageResponse handleEntity(HttpEntity entity) throws IOException {
                         ObjectMapper mapper = new ObjectMapper();
@@ -151,6 +151,7 @@ public class JOpenCageGeocoder {
 
     /**
      * Is HTTPS enabled?
+     * 
      * @return boolean
      */
     public boolean isHttpsEnabled() {
@@ -159,6 +160,7 @@ public class JOpenCageGeocoder {
 
     /**
      * Toggle HTTPS usage
+     * 
      * @param httpsEnabled enable or disable the HTTPS usage
      */
     public void setHttpsEnabled(boolean httpsEnabled) {
@@ -167,6 +169,7 @@ public class JOpenCageGeocoder {
 
     /**
      * API Host
+     * 
      * @return host
      */
     public String getHost() {
@@ -175,6 +178,7 @@ public class JOpenCageGeocoder {
 
     /**
      * Set API Host
+     * 
      * @param host the host
      */
     public void setHost(String host) {
@@ -183,6 +187,7 @@ public class JOpenCageGeocoder {
 
     /**
      * API path
+     * 
      * @return String the path
      */
     public String getPath() {
@@ -191,6 +196,7 @@ public class JOpenCageGeocoder {
 
     /**
      * Set API path
+     * 
      * @param path the path
      */
     public void setPath(String path) {
@@ -199,6 +205,7 @@ public class JOpenCageGeocoder {
 
     /**
      * API Key
+     * 
      * @return String the API Key
      */
     public String getApiKey() {
