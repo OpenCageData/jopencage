@@ -43,7 +43,7 @@ public class JOpenCageGeocoder {
 
     /**
      * JOpenCageGeocoder
-     * 
+     *
      * @param apiKey your Opencage Data API Key
      */
     public JOpenCageGeocoder(String apiKey) {
@@ -52,7 +52,7 @@ public class JOpenCageGeocoder {
 
     /**
      * forward geocoding
-     * 
+     *
      * @param request the request
      * @return JOpenCageResponse
      */
@@ -62,7 +62,7 @@ public class JOpenCageGeocoder {
 
     /**
      * reverse geocoding
-     * 
+     *
      * @param request the request
      * @return JOpenCageResponse
      */
@@ -108,6 +108,7 @@ public class JOpenCageGeocoder {
         if (url != null) {
             try (CloseableHttpClient httpclient = HttpClientBuilder.create().build()) {
                 HttpGet getRequest = new HttpGet(url);
+                getRequest.setHeader("User-Agent", "jOpenCage/2.2.0-SNAPSHOT");
 
                 HttpClientResponseHandler<JOpenCageResponse> rh = new AbstractHttpClientResponseHandler<JOpenCageResponse>() {
                     @Override
@@ -151,7 +152,7 @@ public class JOpenCageGeocoder {
 
     /**
      * Is HTTPS enabled?
-     * 
+     *
      * @return boolean
      */
     public boolean isHttpsEnabled() {
@@ -160,7 +161,7 @@ public class JOpenCageGeocoder {
 
     /**
      * Toggle HTTPS usage
-     * 
+     *
      * @param httpsEnabled enable or disable the HTTPS usage
      */
     public void setHttpsEnabled(boolean httpsEnabled) {
@@ -169,7 +170,7 @@ public class JOpenCageGeocoder {
 
     /**
      * API Host
-     * 
+     *
      * @return host
      */
     public String getHost() {
@@ -178,7 +179,7 @@ public class JOpenCageGeocoder {
 
     /**
      * Set API Host
-     * 
+     *
      * @param host the host
      */
     public void setHost(String host) {
@@ -187,7 +188,7 @@ public class JOpenCageGeocoder {
 
     /**
      * API path
-     * 
+     *
      * @return String the path
      */
     public String getPath() {
@@ -196,7 +197,7 @@ public class JOpenCageGeocoder {
 
     /**
      * Set API path
-     * 
+     *
      * @param path the path
      */
     public void setPath(String path) {
@@ -205,7 +206,7 @@ public class JOpenCageGeocoder {
 
     /**
      * API Key
-     * 
+     *
      * @return String the API Key
      */
     public String getApiKey() {
