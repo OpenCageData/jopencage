@@ -13,8 +13,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - uses HTTPS by default
 - adds a User-Agent Header on the API Requests
-- updeates gradle to 8.4
-- updeates dependencies jackson 2.15.3, junit 5.10.1
+- updates gradle to 8.4
+- updates dependencies jackson 2.15.3, junit 5.10.1
 
 ## [2.1.0] - 2023-11-10
 
