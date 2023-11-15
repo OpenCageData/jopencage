@@ -41,6 +41,20 @@ test {
 	systemProperties = System.properties
 }
 
+jar {
+	manifest {
+		attributes(
+			'Specification-Title': 'Java Client for the OpenCage REST API',
+			'Specification-Vendor': 'OpenCage GmbH',
+			'Specification-Version': archiveVersion,
+			'Implementation-Title': 'Java Client for the OpenCage REST API',
+			'Implementation-Vendor': 'OpenCage GmbH',
+			'Implementation-Version': archiveVersion,
+		)
+	}
+}
+
+
 publishing {
 	publications {
 		mavenJava(MavenPublication) {
