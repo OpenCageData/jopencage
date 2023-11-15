@@ -1,3 +1,6 @@
 Manifest-Version: 1.0
-Main-Class: com.byteowls.jopencage
+Specification-Title:  Java Client for the OpenCage REST API
+Specification-Vendor: OpenCage GmbH
+Implementation-Title: Java Client for the OpenCage REST API
+Implementation-Vendor: OpenCage GmbH
 

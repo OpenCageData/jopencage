@@ -40,6 +40,7 @@ public class JOpenCageGeocoder {
     private String path = OPENCAGE_PATH;
     private String format = "json";
     private String apiKey;
+    private String userAgent;
 
     /**
      * JOpenCageGeocoder
@@ -48,6 +49,12 @@ public class JOpenCageGeocoder {
      */
     public JOpenCageGeocoder(String apiKey) {
         this.apiKey = apiKey;
+        String packageVersion = this.getClass().getPackage().getImplementationVersion();
+        StringBuilder userAgentBuilder = new StringBuilder("jOpenCage/");
+        if (packageVersion != null) {
+            userAgentBuilder.append(packageVersion);
+        }
+        this.userAgent = userAgentBuilder.toString();
     }
 
     /**
@@ -108,7 +115,7 @@ public class JOpenCageGeocoder {
         if (url != null) {
             try (CloseableHttpClient httpclient = HttpClientBuilder.create().build()) {
                 HttpGet getRequest = new HttpGet(url);
-                getRequest.setHeader("User-Agent", "jOpenCage/2.2.0-SNAPSHOT");
+                getRequest.setHeader("User-Agent", this.userAgent);
 
                 HttpClientResponseHandler<JOpenCageResponse> rh = new AbstractHttpClientResponseHandler<JOpenCageResponse>() {
                     @Override
