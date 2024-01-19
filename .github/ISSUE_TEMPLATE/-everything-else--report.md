@@ -16,7 +16,8 @@ ATTENTION: Only issues using a filled template will be accepted!
 
 <!-- Please remove all items that are not relevant. -->
 
-- 2.2.0-SNAPSHOT
+- 2.2.1
+- 2.2.0
 - 2.1.0
 - 2.0.0
 - 1.4.1
