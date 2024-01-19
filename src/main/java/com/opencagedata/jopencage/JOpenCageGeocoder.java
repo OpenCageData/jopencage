@@ -130,16 +130,22 @@ public class JOpenCageGeocoder {
             } catch (HttpResponseException e) {
                 switch (e.getStatusCode()) {
                     case 400:
-                        LOGGER.error("Invalid request (bad request; a required parameter is missing)!");
+                        LOGGER.error("Invalid request (bad request; a required parameter is missing; invalid coordinates; invalid version; invalid format)!");
+                        break;
+                    case 401:
+                        LOGGER.error("Unable to authenticate - missing, invalid, or unknown API key!");
                         break;
                     case 402:
                         LOGGER.error("Valid request but quota exceeded (payment required)!");
                         break;
                     case 403:
-                        LOGGER.error("Invalid or missing api key!");
+                        LOGGER.error("Forbidden (API key disabled or IP address rejected)!");
                         break;
                     case 404:
                         LOGGER.error("Invalid API endpoint!");
+                        break;
+                    case 405:
+                        LOGGER.error("Method not allowed (non-GET request)!");
                         break;
                     case 408:
                         LOGGER.error("Timeout; you can try again!");
@@ -147,9 +153,18 @@ public class JOpenCageGeocoder {
                     case 410:
                         LOGGER.error("Request too long!");
                         break;
+                    case 426:
+                        LOGGER.error("Upgrade required (unsupported TLS)!");
+                        break;
+                    case 429:
+                        LOGGER.error("Too many requests (too quickly, rate limiting)!");
+                        break;
+                    case 503:
+                        LOGGER.error("Internal server error!");
+                        break;
                 }
             } catch (IOException e) {
-                LOGGER.error("", e);
+                LOGGER.error("I/O Exception", e);
             }
         } else {
             LOGGER.error("No jopencage request url build!");
@@ -163,7 +178,7 @@ public class JOpenCageGeocoder {
      * @return boolean
      */
     public boolean isHttpsEnabled() {
-        return httpsEnabled;
+        return this.httpsEnabled;
     }
 
     /**
@@ -181,7 +196,7 @@ public class JOpenCageGeocoder {
      * @return host
      */
     public String getHost() {
-        return host;
+        return this.host;
     }
 
     /**
@@ -199,7 +214,7 @@ public class JOpenCageGeocoder {
      * @return String the path
      */
     public String getPath() {
-        return path;
+        return this.path;
     }
 
     /**
@@ -217,7 +232,7 @@ public class JOpenCageGeocoder {
      * @return String the API Key
      */
     public String getApiKey() {
-        return apiKey;
+        return this.apiKey;
     }
 
 }
