@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [v2.2.1] - 2024-01-19
+## [2.2.1] - 2024-01-19
 
 - updates dependencies httpClient 5.3, jackson 2.16.1
 - updates gradle to 8.5
