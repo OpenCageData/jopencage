@@ -37,7 +37,7 @@ Signup for a [free-trial API Key](https://opencagedata.com/users/sign_up).
 
 ### Example
 
-Forward
+**Forward**
 
 ```java
 // In real live application the JOpenCageGeocoder should be a Singleton
@@ -47,10 +47,10 @@ JOpenCageForwardRequest request = new JOpenCageForwardRequest("Graz");
 request.setMinConfidence(1);
 request.setNoAnnotations(false);
 request.setNoDedupe(true);
-JOpenCageResponse response = jOpenCageGeocoder.forward(request);
+JOpenCageResponse response = jOpenCageGeocoder.forward(request); // try..catch or throw HttpException
 ```
 
-Reverse
+**Reverse**
 
 ```java
 // In real live application the JOpenCageGeocoder should be a Singleton
@@ -59,7 +59,7 @@ JOpenCageGeocoder jOpenCageGeocoder = new JOpenCageGeocoder(YOUR_API_KEY);
 JOpenCageReverseRequest request = new JOpenCageReverseRequest(-22.6792, 14.5272);
 request.setNoAnnotations(true);
 
-JOpenCageResponse response = jOpenCageGeocoder.reverse(request);
+JOpenCageResponse response = jOpenCageGeocoder.reverse(request);  // try..catch or throw HttpException
 ```
 
 ## Libraries
@@ -73,7 +73,7 @@ JOpenCageResponse response = jOpenCageGeocoder.reverse(request);
 
 For running the tests you have to use your _OWN_ OpenCage Geocoding API Key. Get a free trial key at https://opencagedata.com
 
-```
+```bash
 ./gradlew -DOPENCAGE_API_KEY=<your apikey> test
 ```
 

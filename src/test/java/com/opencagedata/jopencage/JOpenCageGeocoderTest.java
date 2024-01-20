@@ -29,7 +29,12 @@ class JOpenCageGeocoderTest extends JOpenCageBaseApiTest {
         request.setNoDedupe(true);
         request.setSubkey("test");
 
-        JOpenCageResponse response = jOpenCageGeocoder.forward(request);
+        JOpenCageResponse response = null;
+        try {
+            response = jOpenCageGeocoder.forward(request);
+        } catch (HttpException e) {
+            throw new RuntimeException(e);
+        }
         assertNotNull(response);
 
         JOpenCageLatLng firstPosition = response.getFirstPosition();
@@ -49,7 +54,12 @@ class JOpenCageGeocoderTest extends JOpenCageBaseApiTest {
         request.setLimit(1);
         request.setNoAnnotations(true);
 
-        JOpenCageResponse response = this.jOpenCageGeocoder.forward(request);
+        JOpenCageResponse response = null;
+        try {
+            response = this.jOpenCageGeocoder.forward(request);
+        } catch (HttpException e) {
+            throw new RuntimeException(e);
+        }
         assertTrue(response != null && response.getResults() != null && !response.getResults().isEmpty());
 
         JOpenCageLatLng coordinates = response.getResults().get(0).getGeometry();
@@ -65,14 +75,24 @@ class JOpenCageGeocoderTest extends JOpenCageBaseApiTest {
         //    request.setLanguage("de");
         request.setNoAnnotations(true);
 
-        JOpenCageResponse response = jOpenCageGeocoder.reverse(request);
+        JOpenCageResponse response = null;
+        try {
+            response = jOpenCageGeocoder.reverse(request);
+        } catch (HttpException e) {
+            throw new RuntimeException(e);
+        }
         assertNotNull(response);
     }
 
     @Test
     public void reverseDecimalWithLargeScale() {
         JOpenCageReverseRequest request = new JOpenCageReverseRequest(51.512173691848446, -0.0004923223308081751);
-        JOpenCageResponse response = jOpenCageGeocoder.reverse(request);
+        JOpenCageResponse response = null;
+        try {
+            response = jOpenCageGeocoder.reverse(request);
+        } catch (HttpException e) {
+            throw new RuntimeException(e);
+        }
         assertNotNull(response);
         assertFalse(response.getResults().isEmpty());
         assertEquals("gb", response.getResults().get(0).getComponents().getCountryCode());
@@ -84,7 +104,12 @@ class JOpenCageGeocoderTest extends JOpenCageBaseApiTest {
         JOpenCageReverseRequest request = new JOpenCageReverseRequest(lat, lng);
         request.setLimit(1);
         request.setNoAnnotations(true);
-        JOpenCageResponse response = jOpenCageGeocoder.reverse(request);
+        JOpenCageResponse response = null;
+        try {
+            response = jOpenCageGeocoder.reverse(request);
+        } catch (HttpException e) {
+            throw new RuntimeException(e);
+        }
 
         assertTrue(response != null && response.getResults() != null && !response.getResults().isEmpty());
 
