@@ -143,31 +143,33 @@ public class JOpenCageGeocoder {
                         throw new HttpForbiddenException("Forbidden (API key disabled or IP address rejected)!");
                     case 404:
                         LOGGER.error("Invalid API endpoint!");
-                        break;
+                        throw new HttpNotFoundException("Invalid API endpoint!");
                     case 405:
                         LOGGER.error("Method not allowed (non-GET request)!");
-                        break;
+                        throw new HttpMethodNotAllowedException("Method not allowed (non-GET request)!");
                     case 408:
                         LOGGER.error("Timeout; you can try again!");
-                        break;
+                        throw new HttpTimeOutException("Timeout; you can try again!");
                     case 410:
                         LOGGER.error("Request too long!");
-                        break;
+                        throw new HttpRequestTooLongException("Request too long!");
                     case 426:
                         LOGGER.error("Upgrade required (unsupported TLS)!");
-                        break;
+                        throw new HttpUpgradeRequiredException("Upgrade required (unsupported TLS)!");
                     case 429:
                         LOGGER.error("Too many requests (too quickly, rate limiting)!");
                         throw new HttpTooManyRequestsException("Too many requests (too quickly, rate limiting)!");
                     case 503:
                         LOGGER.error("Internal server error!");
-                        throw  new HttpServerErrorException("Internal server error!");
+                        throw new HttpServerErrorException("Internal server error!");
                 }
             } catch (IOException e) {
                 LOGGER.error("I/O Exception", e);
+                throw new HttpClientErrorException("I/O Exception", e);
             }
         } else {
-            LOGGER.error("No jopencage request url build!");
+            LOGGER.error("No jopencage request url built!");
+            throw new HttpClientErrorException("No jopencage request url built!");
         }
         return null;
     }
