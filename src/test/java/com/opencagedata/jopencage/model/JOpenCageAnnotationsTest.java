@@ -1,5 +1,6 @@
 package com.opencagedata.jopencage.model;
 
+import com.opencagedata.jopencage.HttpException;
 import com.opencagedata.jopencage.JOpenCageBaseApiTest;
 import org.junit.jupiter.api.Test;
 
@@ -10,7 +11,12 @@ class JOpenCageAnnotationsTest extends JOpenCageBaseApiTest {
     @Test
     public void testAnnotationIncluded() {
         JOpenCageReverseRequest request = new JOpenCageReverseRequest(-22.6792, 14.5272);
-        JOpenCageResponse response = jOpenCageGeocoder.reverse(request);
+        JOpenCageResponse response = null;
+        try {
+            response = jOpenCageGeocoder.reverse(request);
+        } catch (HttpException e) {
+            throw new RuntimeException(e);
+        }
         assertNotNull(response);
 
         for (JOpenCageResult r : response.getResults()) {
@@ -25,7 +31,12 @@ class JOpenCageAnnotationsTest extends JOpenCageBaseApiTest {
         request.setLimit(1);
         request.setNoAnnotations(false);
 
-        JOpenCageResponse response = jOpenCageGeocoder.forward(request);
+        JOpenCageResponse response = null;
+        try {
+            response = jOpenCageGeocoder.forward(request);
+        } catch (HttpException e) {
+            throw new RuntimeException(e);
+        }
         assertNotNull(response);
 
         for (JOpenCageResult r : response.getResults()) {
@@ -42,7 +53,12 @@ class JOpenCageAnnotationsTest extends JOpenCageBaseApiTest {
         request.setLimit(1);
         request.setNoAnnotations(false);
 
-        JOpenCageResponse response = jOpenCageGeocoder.forward(request);
+        JOpenCageResponse response = null;
+        try {
+            response = jOpenCageGeocoder.forward(request);
+        } catch (HttpException e) {
+            throw new RuntimeException(e);
+        }
         assertNotNull(response);
 
         for (JOpenCageResult r : response.getResults()) {

@@ -63,7 +63,7 @@ public class JOpenCageGeocoder {
      * @param request the request
      * @return JOpenCageResponse
      */
-    public JOpenCageResponse forward(JOpenCageForwardRequest request) {
+    public JOpenCageResponse forward(JOpenCageForwardRequest request) throws HttpException {
         return sendRequest(request);
     }
 
@@ -73,7 +73,7 @@ public class JOpenCageGeocoder {
      * @param request the request
      * @return JOpenCageResponse
      */
-    public JOpenCageResponse reverse(JOpenCageReverseRequest request) {
+    public JOpenCageResponse reverse(JOpenCageReverseRequest request) throws HttpException {
         return sendRequest(request);
     }
 
@@ -103,7 +103,7 @@ public class JOpenCageGeocoder {
         return uriBuilder.build();
     }
 
-    private JOpenCageResponse sendRequest(JOpenCageRequest jOpenCageRequest) {
+    private JOpenCageResponse sendRequest(JOpenCageRequest jOpenCageRequest) throws HttpException {
         URI url = null;
         try {
             url = buildUri(jOpenCageRequest);
@@ -131,16 +131,16 @@ public class JOpenCageGeocoder {
                 switch (e.getStatusCode()) {
                     case 400:
                         LOGGER.error("Invalid request (bad request; a required parameter is missing; invalid coordinates; invalid version; invalid format)!");
-                        break;
+                        throw new HttpBadRequestException("Invalid request (bad request; a required parameter is missing; invalid coordinates; invalid version; invalid format)!");
                     case 401:
                         LOGGER.error("Unable to authenticate - missing, invalid, or unknown API key!");
-                        break;
+                        throw new HttpUnauthenticatedException("Unable to authenticate - missing, invalid, or unknown API key!");
                     case 402:
                         LOGGER.error("Valid request but quota exceeded (payment required)!");
-                        break;
+                        throw new HttpQuotaExceededException("Valid request but quota exceeded (payment required)!");
                     case 403:
                         LOGGER.error("Forbidden (API key disabled or IP address rejected)!");
-                        break;
+                        throw new HttpForbiddenException("Forbidden (API key disabled or IP address rejected)!");
                     case 404:
                         LOGGER.error("Invalid API endpoint!");
                         break;
@@ -158,10 +158,10 @@ public class JOpenCageGeocoder {
                         break;
                     case 429:
                         LOGGER.error("Too many requests (too quickly, rate limiting)!");
-                        break;
+                        throw new HttpTooManyRequestsException("Too many requests (too quickly, rate limiting)!");
                     case 503:
                         LOGGER.error("Internal server error!");
-                        break;
+                        throw  new HttpServerErrorException("Internal server error!");
                 }
             } catch (IOException e) {
                 LOGGER.error("I/O Exception", e);
