@@ -62,6 +62,10 @@ request.setNoAnnotations(true);
 JOpenCageResponse response = jOpenCageGeocoder.reverse(request);  // try..catch or throw HttpException
 ```
 
+## Upgrading from 1.x or 2.x to 3.x
+
+Starting in version 3.x, the methods `forward()` and `reverse()` can throw a `com.opencagedata.jopencage.HttpException`.
+
 ## Libraries
 
 -   JDK 8+
