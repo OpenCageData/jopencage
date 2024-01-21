@@ -1,4 +1,5 @@
 package com.opencagedata.jopencage;
+
 /**
  * HttpMethodNotAllowedException
  *
@@ -6,16 +7,18 @@ package com.opencagedata.jopencage;
  * @since 3.0
  */
 
-public class HttpMethodNotAllowedException extends HttpException {
+public class HttpMethodNotAllowedException extends JOpenCageException {
     /**
-     * Creates a new HttpMethodNotAllowedException with a <tt>null</tt> detail message.
+     * Creates a new HttpMethodNotAllowedException with a <code>null</code> detail
+     * message.
      */
     public HttpMethodNotAllowedException() {
         super();
     }
 
     /**
-     * Creates a new HttpMethodNotAllowedException with the specified detail message.
+     * Creates a new HttpMethodNotAllowedException with the specified detail
+     * message.
      *
      * @param message The error message
      */

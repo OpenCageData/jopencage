@@ -20,8 +20,8 @@ public class ExceptionsTest {
         JOpenCageReverseRequest request = new JOpenCageReverseRequest(6792., 5272.);
         try {
             jOpenCageGeocoder.reverse(request);
-        } catch (HttpException e) {
-            assertTrue(e instanceof HttpBadRequestException);
+        } catch (JOpenCageException e) {
+            assertTrue(e instanceof BadRequestException);
         }
     }
     /**
@@ -34,8 +34,8 @@ public class ExceptionsTest {
         JOpenCageForwardRequest request = new JOpenCageForwardRequest("Berlin");
         try {
             jOpenCageGeocoder.forward(request);
-        } catch (HttpException e) {
-            assertTrue(e instanceof HttpUnauthenticatedException);
+        } catch (JOpenCageException e) {
+            assertTrue(e instanceof UnauthenticatedException);
         }
     }
     /**
@@ -49,8 +49,8 @@ public class ExceptionsTest {
         JOpenCageForwardRequest request = new JOpenCageForwardRequest("Berlin");
         try {
             jOpenCageGeocoder.forward(request);
-        } catch (HttpException e) {
-            assertTrue(e instanceof HttpQuotaExceededException);
+        } catch (JOpenCageException e) {
+            assertTrue(e instanceof QuotaExceededException);
         }
     }
     /**
@@ -64,8 +64,8 @@ public class ExceptionsTest {
         JOpenCageForwardRequest request = new JOpenCageForwardRequest("Berlin");
         try {
             jOpenCageGeocoder.forward(request);
-        } catch (HttpException e) {
-            assertTrue(e instanceof HttpForbiddenException);
+        } catch (JOpenCageException e) {
+            assertTrue(e instanceof ForbiddenException);
         }
     }
     /**
@@ -99,8 +99,8 @@ public class ExceptionsTest {
         JOpenCageForwardRequest request = new JOpenCageForwardRequest("Berlin");
         try {
             jOpenCageGeocoder.forward(request);
-        } catch (HttpException e) {
-            assertTrue(e instanceof HttpTooManyRequestsException);
+        } catch (JOpenCageException e) {
+            assertTrue(e instanceof TooManyRequestsException);
         }
     }
     /**
