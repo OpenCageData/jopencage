@@ -2,6 +2,7 @@
 
 [![Maven Central](https://img.shields.io/maven-central/v/com.opencagedata/jopencage.svg?label=Maven%20Central)](https://central.sonatype.com/artifact/com.opencagedata/jopencage)
 [![UnitTests](https://github.com/OpenCageData/jopencage/actions/workflows/unit-tests.yml/badge.svg?branch=master)](https://github.com/OpenCageData/jopencage/actions)
+[![Javadoc](https://img.shields.io/badge/JavaDoc-Online-green)](https://opencagedata.github.io/jopencage/javadoc/)
 
 [![security status](https://www.meterian.io/badge/gh/OpenCageData/jopencage/security?branch=master)](https://www.meterian.io/report/gh/OpenCageData/jopencage)
 [![stability status](https://www.meterian.io/badge/gh/OpenCageData/jopencage/stability?branch=master)](https://www.meterian.io/report/gh/OpenCageData/jopencage)
@@ -63,7 +64,11 @@ JOpenCageResponse response = jOpenCageGeocoder.reverse(request);  // try..catch 
 
 ## Upgrading from 1.x or 2.x to 3.x
 
-Starting in version 3.x, the methods `forward()` and `reverse()` can throw a `com.opencagedata.jopencage.HttpException`.
+Starting with version 3.x, the methods `forward()` and `reverse()` can throw a `com.opencagedata.jopencage.HttpException`.
+
+## Javadoc
+
+https://opencagedata.github.io/jopencage/javadoc/
 
 ## Libraries
 
