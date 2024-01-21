@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.opencagedata.jopencage"},{"l":"com.opencagedata.jopencage.model"},{"l":"com.opencagedata.jopencage.support"}];updateSearchResults();
