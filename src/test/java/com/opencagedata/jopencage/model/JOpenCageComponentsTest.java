@@ -1,6 +1,6 @@
 package com.opencagedata.jopencage.model;
 
-import com.opencagedata.jopencage.HttpException;
+import com.opencagedata.jopencage.JOpenCageException;
 import com.opencagedata.jopencage.JOpenCageBaseApiTest;
 import org.junit.jupiter.api.Test;
 
@@ -20,7 +20,7 @@ class JOpenCageComponentsTest extends JOpenCageBaseApiTest {
         JOpenCageResponse response = null;
         try {
             response = jOpenCageGeocoder.forward(request);
-        } catch (HttpException e) {
+        } catch (JOpenCageException e) {
             throw new RuntimeException(e);
         }
         assertNotNull(response);
@@ -39,7 +39,7 @@ class JOpenCageComponentsTest extends JOpenCageBaseApiTest {
         JOpenCageResponse response = null;
         try {
             response = jOpenCageGeocoder.forward(request);
-        } catch (HttpException e) {
+        } catch (JOpenCageException e) {
             throw new RuntimeException(e);
         }
         assertNotNull(response);
@@ -58,7 +58,7 @@ class JOpenCageComponentsTest extends JOpenCageBaseApiTest {
         JOpenCageResponse response = null;
         try {
             response = jOpenCageGeocoder.forward(request);
-        } catch (HttpException e) {
+        } catch (JOpenCageException e) {
             throw new RuntimeException(e);
         }
         assertNotNull(response);

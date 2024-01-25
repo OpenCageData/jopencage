@@ -6,11 +6,11 @@ package com.opencagedata.jopencage;
  * @since 3.0
  */
 
-public class HttpTooManyRequestsException extends HttpException {
+public class TooManyRequestsException extends JOpenCageException {
     /**
      * Creates a new HttpTooManyRequestException with a <tt>null</tt> detail message.
      */
-    public HttpTooManyRequestsException() {
+    public TooManyRequestsException() {
         super();
     }
 
@@ -19,7 +19,7 @@ public class HttpTooManyRequestsException extends HttpException {
      *
      * @param message The error message
      */
-    public HttpTooManyRequestsException(String message) {
+    public TooManyRequestsException(String message) {
         super(message);
     }
 }

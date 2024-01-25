@@ -32,7 +32,7 @@ class JOpenCageGeocoderTest extends JOpenCageBaseApiTest {
         JOpenCageResponse response = null;
         try {
             response = jOpenCageGeocoder.forward(request);
-        } catch (HttpException e) {
+        } catch (JOpenCageException e) {
             throw new RuntimeException(e);
         }
         assertNotNull(response);
@@ -57,7 +57,7 @@ class JOpenCageGeocoderTest extends JOpenCageBaseApiTest {
         JOpenCageResponse response = null;
         try {
             response = this.jOpenCageGeocoder.forward(request);
-        } catch (HttpException e) {
+        } catch (JOpenCageException e) {
             throw new RuntimeException(e);
         }
         assertTrue(response != null && response.getResults() != null && !response.getResults().isEmpty());
@@ -78,7 +78,7 @@ class JOpenCageGeocoderTest extends JOpenCageBaseApiTest {
         JOpenCageResponse response = null;
         try {
             response = jOpenCageGeocoder.reverse(request);
-        } catch (HttpException e) {
+        } catch (JOpenCageException e) {
             throw new RuntimeException(e);
         }
         assertNotNull(response);
@@ -90,7 +90,7 @@ class JOpenCageGeocoderTest extends JOpenCageBaseApiTest {
         JOpenCageResponse response = null;
         try {
             response = jOpenCageGeocoder.reverse(request);
-        } catch (HttpException e) {
+        } catch (JOpenCageException e) {
             throw new RuntimeException(e);
         }
         assertNotNull(response);
@@ -107,7 +107,7 @@ class JOpenCageGeocoderTest extends JOpenCageBaseApiTest {
         JOpenCageResponse response = null;
         try {
             response = jOpenCageGeocoder.reverse(request);
-        } catch (HttpException e) {
+        } catch (JOpenCageException e) {
             throw new RuntimeException(e);
         }
 

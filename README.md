@@ -35,9 +35,9 @@ Signup for a [free-trial API Key](https://opencagedata.com/users/sign_up).
     implementation "com.opencagedata:jopencage:REPLACE.WITH.VERSION"
 ```
 
-### Example
+### Examples
 
-**Forward**
+#### Forward
 
 ```java
 // In real live application the JOpenCageGeocoder should be a Singleton
@@ -47,10 +47,10 @@ JOpenCageForwardRequest request = new JOpenCageForwardRequest("Graz");
 request.setMinConfidence(1);
 request.setNoAnnotations(false);
 request.setNoDedupe(true);
-JOpenCageResponse response = jOpenCageGeocoder.forward(request); // try..catch or throw HttpException
+JOpenCageResponse response = jOpenCageGeocoder.forward(request); // try..catch or throw JOpenCageException
 ```
 
-**Reverse**
+#### Reverse
 
 ```java
 // In real live application the JOpenCageGeocoder should be a Singleton
@@ -59,12 +59,12 @@ JOpenCageGeocoder jOpenCageGeocoder = new JOpenCageGeocoder(YOUR_API_KEY);
 JOpenCageReverseRequest request = new JOpenCageReverseRequest(-22.6792, 14.5272);
 request.setNoAnnotations(true);
 
-JOpenCageResponse response = jOpenCageGeocoder.reverse(request);  // try..catch or throw HttpException
+JOpenCageResponse response = jOpenCageGeocoder.reverse(request);  // try..catch or throw JOpenCageException
 ```
 
 ## Upgrading from 1.x or 2.x to 3.x
 
-Starting with version 3.x, the methods `forward()` and `reverse()` can throw a `com.opencagedata.jopencage.HttpException`.
+Starting with version 3.x, the methods `forward()` and `reverse()` can throw a `com.opencagedata.jopencage.JOpenCageException`.
 
 ## Javadoc
 

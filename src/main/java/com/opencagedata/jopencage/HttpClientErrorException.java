@@ -6,7 +6,7 @@ package com.opencagedata.jopencage;
  * @since 3.0
  */
 
-public class HttpClientErrorException extends HttpException {
+public class HttpClientErrorException extends JOpenCageException {
     /**
      * Creates a new HttpClientErrorException with a <tt>null</tt> detail message.
      */

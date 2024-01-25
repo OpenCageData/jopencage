@@ -6,7 +6,7 @@ package com.opencagedata.jopencage;
  * @since 3.0
  */
 
-public class HttpNotFoundException extends HttpException {
+public class HttpNotFoundException extends JOpenCageException {
     /**
      * Creates a new HttpNotFoundException with a <tt>null</tt> detail message.
      */
