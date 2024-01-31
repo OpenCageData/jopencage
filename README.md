@@ -97,3 +97,11 @@ Apache 2.0. Please see [LICENSE](jopencage/blob/master/LICENSE).
 ## History
 
 Until July 2023 this library was maintained by [Michael Oberwasserlechner](https://github.com/moberwasserlechner). At his request due to lack of time to work on it the libary was then taken over by OpenCage GmbH. Thanks, Michael!
+
+## Who is OpenCage GmbH?
+
+[![OpenCage Logo](/resources/opencage_logo_300_150.png)](https://opencagedata.com)
+
+We run the [OpenCage Geocoding API](https://opencagedata.com/api). Learn more [about us](https://opencagedata.com/about).
+
+We also run [Geomob](https://thegeomob.com), a series of regular meetups for location based service creators, where we do our best to highlight geoinnovation. If you like geo stuff, you will probably enjoy [the Geomob podcast](https://thegeomob.com/podcast/).
