@@ -1,5 +1,7 @@
 # JOpenCage
 
+:warning: This is an unstable branch that only contains SNAPSHOT versions; it is still under development.
+
 [![Maven Central](https://img.shields.io/maven-central/v/com.opencagedata/jopencage.svg?label=Maven%20Central)](https://central.sonatype.com/artifact/com.opencagedata/jopencage)
 [![UnitTests](https://github.com/OpenCageData/jopencage/actions/workflows/unit-tests.yml/badge.svg?branch=master)](https://github.com/OpenCageData/jopencage/actions)
 [![Javadoc](https://img.shields.io/badge/JavaDoc-Online-green)](https://opencagedata.github.io/jopencage/javadoc/)
