@@ -1,7 +1,10 @@
 # JOpenCage
 
+:warning: This is an unstable branch that only contains SNAPSHOT versions; it is still under development.
+
 [![Maven Central](https://img.shields.io/maven-central/v/com.opencagedata/jopencage.svg?label=Maven%20Central)](https://central.sonatype.com/artifact/com.opencagedata/jopencage)
 [![UnitTests](https://github.com/OpenCageData/jopencage/actions/workflows/unit-tests.yml/badge.svg?branch=master)](https://github.com/OpenCageData/jopencage/actions)
+[![Javadoc](https://img.shields.io/badge/JavaDoc-Online-green)](https://opencagedata.github.io/jopencage/javadoc/)
 
 [![security status](https://www.meterian.io/badge/gh/OpenCageData/jopencage/security?branch=master)](https://www.meterian.io/report/gh/OpenCageData/jopencage)
 [![stability status](https://www.meterian.io/badge/gh/OpenCageData/jopencage/stability?branch=master)](https://www.meterian.io/report/gh/OpenCageData/jopencage)
@@ -34,9 +37,9 @@ Signup for a [free-trial API Key](https://opencagedata.com/users/sign_up).
     implementation "com.opencagedata:jopencage:REPLACE.WITH.VERSION"
 ```
 
-### Example
+### Examples
 
-Forward
+#### Forward
 
 ```java
 // In real live application the JOpenCageGeocoder should be a Singleton
@@ -46,10 +49,10 @@ JOpenCageForwardRequest request = new JOpenCageForwardRequest("Graz");
 request.setMinConfidence(1);
 request.setNoAnnotations(false);
 request.setNoDedupe(true);
-JOpenCageResponse response = jOpenCageGeocoder.forward(request);
+JOpenCageResponse response = jOpenCageGeocoder.forward(request); // try..catch or throw JOpenCageException
 ```
 
-Reverse
+#### Reverse
 
 ```java
 // In real live application the JOpenCageGeocoder should be a Singleton
@@ -58,8 +61,16 @@ JOpenCageGeocoder jOpenCageGeocoder = new JOpenCageGeocoder(YOUR_API_KEY);
 JOpenCageReverseRequest request = new JOpenCageReverseRequest(-22.6792, 14.5272);
 request.setNoAnnotations(true);
 
-JOpenCageResponse response = jOpenCageGeocoder.reverse(request);
+JOpenCageResponse response = jOpenCageGeocoder.reverse(request);  // try..catch or throw JOpenCageException
 ```
+
+## Upgrading from 1.x or 2.x to 3.x
+
+Starting with version 3.x, the methods `forward()` and `reverse()` can throw a `com.opencagedata.jopencage.JOpenCageException`.
+
+## Javadoc
+
+https://opencagedata.github.io/jopencage/javadoc/
 
 ## Libraries
 
@@ -72,7 +83,7 @@ JOpenCageResponse response = jOpenCageGeocoder.reverse(request);
 
 For running the tests you have to use your _OWN_ OpenCage Geocoding API Key. Get a free trial key at https://opencagedata.com
 
-```
+```bash
 ./gradlew -DOPENCAGE_API_KEY=<your apikey> test
 ```
 

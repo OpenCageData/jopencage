@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- The methods `forward` and `reverse` can throw Exceptions [#32](https://github.com/OpenCageData/jopencage/issues/32)
+
+### Added
+
+- Javadoc published on GH Pages, thanks to action [deploy-publish-javadoc](https://github.com/marketplace/actions/deploy-publish-javadoc)
+
 ## [2.2.1] - 2024-01-19
 
 - updates dependencies httpClient 5.3, jackson 2.16.1
