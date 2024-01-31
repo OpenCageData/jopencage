@@ -1,4 +1,5 @@
 package com.opencagedata.jopencage;
+
 /**
  * TimeOutException
  *
@@ -8,7 +9,7 @@ package com.opencagedata.jopencage;
 
 public class TimeOutException extends JOpenCageException {
     /**
-     * Creates a new TimeOutException with a <tt>null</tt> detail message.
+     * Creates a new TimeOutException with a <code>null</code> detail message.
      */
     public TimeOutException() {
         super();

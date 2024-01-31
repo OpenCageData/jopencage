@@ -1,4 +1,5 @@
 package com.opencagedata.jopencage;
+
 /**
  * HttpNotFoundException
  *
@@ -8,7 +9,7 @@ package com.opencagedata.jopencage;
 
 public class HttpNotFoundException extends JOpenCageException {
     /**
-     * Creates a new HttpNotFoundException with a <tt>null</tt> detail message.
+     * Creates a new HttpNotFoundException with a <code>null</code> detail message.
      */
     public HttpNotFoundException() {
         super();

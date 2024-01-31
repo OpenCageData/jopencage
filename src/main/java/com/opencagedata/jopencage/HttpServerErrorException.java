@@ -9,7 +9,8 @@ package com.opencagedata.jopencage;
 public class HttpServerErrorException extends JOpenCageException {
 
     /**
-     * Creates a new HttpServerErrorException with a <tt>null</tt> detail message.
+     * Creates a new HttpServerErrorException with a <code>null</code> detail
+     * message.
      */
     public HttpServerErrorException() {
         super();

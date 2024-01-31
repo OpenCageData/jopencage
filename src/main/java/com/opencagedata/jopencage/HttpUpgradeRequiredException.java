@@ -1,4 +1,5 @@
 package com.opencagedata.jopencage;
+
 /**
  * HttpUpgradeRequiredException
  *
@@ -8,7 +9,8 @@ package com.opencagedata.jopencage;
 
 public class HttpUpgradeRequiredException extends JOpenCageException {
     /**
-     * Creates a new HttpUpgradeRequiredException with a <tt>null</tt> detail message.
+     * Creates a new HttpUpgradeRequiredException with a <code>null</code> detail
+     * message.
      */
     public HttpUpgradeRequiredException() {
         super();

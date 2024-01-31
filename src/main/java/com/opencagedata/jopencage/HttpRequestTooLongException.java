@@ -1,4 +1,5 @@
 package com.opencagedata.jopencage;
+
 /**
  * HttpRequestTooLongException
  *
@@ -8,7 +9,8 @@ package com.opencagedata.jopencage;
 
 public class HttpRequestTooLongException extends JOpenCageException {
     /**
-     * Creates a new HttpRequestTooLongException with a <tt>null</tt> detail message.
+     * Creates a new HttpRequestTooLongException with a <code>null</code> detail
+     * message.
      */
     public HttpRequestTooLongException() {
         super();

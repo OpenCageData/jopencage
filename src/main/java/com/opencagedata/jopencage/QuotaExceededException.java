@@ -1,4 +1,5 @@
 package com.opencagedata.jopencage;
+
 /**
  * QuotaExceededException
  *
@@ -8,7 +9,7 @@ package com.opencagedata.jopencage;
 
 public class QuotaExceededException extends JOpenCageException {
     /**
-     * Creates a new QuotaExceededException with a <tt>null</tt> detail message.
+     * Creates a new QuotaExceededException with a <code>null</code> detail message.
      */
     public QuotaExceededException() {
         super();

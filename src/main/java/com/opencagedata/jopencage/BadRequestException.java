@@ -1,4 +1,5 @@
 package com.opencagedata.jopencage;
+
 /**
  * BadRequestException
  *
@@ -8,7 +9,7 @@ package com.opencagedata.jopencage;
 
 public class BadRequestException extends JOpenCageException {
     /**
-     * Creates a new BadRequestException with a <tt>null</tt> detail message.
+     * Creates a new BadRequestException with a <code>null</code> detail message.
      */
     public BadRequestException() {
         super();

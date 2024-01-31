@@ -1,4 +1,5 @@
 package com.opencagedata.jopencage;
+
 /**
  * UnauthenticatedException
  *
@@ -8,7 +9,8 @@ package com.opencagedata.jopencage;
 
 public class UnauthenticatedException extends JOpenCageException {
     /**
-     * Creates a new UnauthenticatedException with a <tt>null</tt> detail message.
+     * Creates a new UnauthenticatedException with a <code>null</code> detail
+     * message.
      */
     public UnauthenticatedException() {
         super();

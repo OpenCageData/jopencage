@@ -1,4 +1,5 @@
 package com.opencagedata.jopencage;
+
 /**
  * ForbiddenException
  *
@@ -8,7 +9,7 @@ package com.opencagedata.jopencage;
 
 public class ForbiddenException extends JOpenCageException {
     /**
-     * Creates a new ForbiddenException with a <tt>null</tt> detail message.
+     * Creates a new ForbiddenException with a <code>null</code> detail message.
      */
     public ForbiddenException() {
         super();

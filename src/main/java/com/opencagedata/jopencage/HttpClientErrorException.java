@@ -1,4 +1,5 @@
 package com.opencagedata.jopencage;
+
 /**
  * HttpClientErrorException
  *
@@ -8,7 +9,8 @@ package com.opencagedata.jopencage;
 
 public class HttpClientErrorException extends JOpenCageException {
     /**
-     * Creates a new HttpClientErrorException with a <tt>null</tt> detail message.
+     * Creates a new HttpClientErrorException with a <code>null</code> detail
+     * message.
      */
     public HttpClientErrorException() {
         super();
@@ -24,10 +26,11 @@ public class HttpClientErrorException extends JOpenCageException {
     }
 
     /**
-     * Creates a new HttpClientErrorException with the specified detail message and its Throwable cause.
+     * Creates a new HttpClientErrorException with the specified detail message and
+     * its Throwable cause.
      *
      * @param message The error message
-     * @param cause The cause
+     * @param cause   The cause
      */
     public HttpClientErrorException(String message, Throwable cause) {
         super(message, cause);

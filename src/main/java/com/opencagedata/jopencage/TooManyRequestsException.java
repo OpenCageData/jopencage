@@ -1,4 +1,5 @@
 package com.opencagedata.jopencage;
+
 /**
  * HttpTooManyRequestException
  *
@@ -8,7 +9,8 @@ package com.opencagedata.jopencage;
 
 public class TooManyRequestsException extends JOpenCageException {
     /**
-     * Creates a new HttpTooManyRequestException with a <tt>null</tt> detail message.
+     * Creates a new HttpTooManyRequestException with a <code>null</code> detail
+     * message.
      */
     public TooManyRequestsException() {
         super();
