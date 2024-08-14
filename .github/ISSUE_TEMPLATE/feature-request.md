@@ -1,9 +1,9 @@
 ---
 name: Feature Request
 about: Request a feature addition or change.
-title: 'Feat: '
-labels: ''
-assignees: ''
+title: "Feat: "
+labels: ""
+assignees: ""
 ---
 
 <!--
