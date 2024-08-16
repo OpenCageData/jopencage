@@ -1,33 +1,33 @@
 name: Unit Tests workflow
 
 on:
-  push:
-    branches:
-      - '**'
-    tags-ignore:
-      - '*.*'
-    paths-ignore:
-      - README.md
-      - CHANGELOG.md
+    push:
+        branches:
+            - "**"
+        tags-ignore:
+            - "*.*"
+        paths-ignore:
+            - README.md
+            - CHANGELOG.md
 
 jobs:
-  gradle_tests:
-    name: Gradle test
-    runs-on: ubuntu-latest
+    gradle_tests:
+        name: Gradle test
+        runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout latest source
-        uses: actions/checkout@v4
+        steps:
+            - name: Checkout latest source
+              uses: actions/checkout@v4
 
-      - name: Set up JDK 8
-        uses: actions/setup-java@v4
-        with:
-          distribution: 'temurin'
-          java-version: 8
-          cache: 'gradle'
+            - name: Set up JDK 8
+              uses: actions/setup-java@v4
+              with:
+                  distribution: "temurin"
+                  java-version: 8
+                  cache: "gradle"
 
-      - name: Grant execute permission for gradlew
-        run: chmod +x gradlew
+            - name: Grant execute permission for gradlew
+              run: chmod +x gradlew
 
-      - name: Run Tests
-        run: ./gradlew -DOPENCAGE_API_KEY=${{ secrets.OPENCAGE_API_KEY }} test
+            - name: Run Tests
+              run: ./gradlew -DOPENCAGE_API_KEY=${{ secrets.OPENCAGE_API_KEY }} test
