@@ -8,9 +8,6 @@ repositories {
 	mavenCentral()
 }
 
-sourceCompatibility = JavaVersion.VERSION_1_8
-targetCompatibility = JavaVersion.VERSION_1_8
-
 dependencies {
 
 	implementation "org.apache.httpcomponents.client5:httpclient5:${httpClientVersion}"
@@ -26,6 +23,9 @@ dependencies {
 }
 
 java {
+	sourceCompatibility = JavaVersion.VERSION_1_8
+	targetCompatibility = JavaVersion.VERSION_1_8
+
 	withJavadocJar()
 	withSourcesJar()
 }
