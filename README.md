@@ -74,10 +74,10 @@ https://opencagedata.github.io/jopencage/javadoc/
 
 ## Libraries
 
-- JDK 8+
-- Apache Http Client
-- FasterXml Jackson
-- Slf4j
+-   JDK 8+
+-   Apache Http Client
+-   FasterXml Jackson
+-   Slf4j
 
 ## Testing
 
@@ -90,7 +90,7 @@ For running the tests you have to use your _OWN_ OpenCage Geocoding API Key. Get
 ## Gradle
 
 ```bash
-./gradlew wrapper --gradle-version 8.5
+./gradlew wrapper --gradle-version 8.14.1
 ```
 
 ## Contribute
