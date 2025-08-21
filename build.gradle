@@ -85,7 +85,6 @@ publishing {
 				}
 				contributors {
 					contributor {
-						id = 'moberwasserlechner'
 						name = 'Michael Oberwasserlechner'
 						email = 'm.oberwasserlechner@byteowls.com'
 						roles = [ 'former maintainer']
