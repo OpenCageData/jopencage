@@ -9,7 +9,6 @@ repositories {
 }
 
 dependencies {
-
 	implementation "org.apache.httpcomponents.client5:httpclient5:${httpClientVersion}"
 	implementation "com.fasterxml.jackson.core:jackson-databind:${jacksonVersion}"
 	implementation "com.fasterxml.jackson.core:jackson-core:${jacksonVersion}"
@@ -18,13 +17,16 @@ dependencies {
 	// Tests
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 
-	testImplementation(platform("org.junit:junit-bom:${junitVersion}"))
-	testImplementation("org.junit.jupiter:junit-jupiter:${junitVersion}")
+	testImplementation platform("org.junit:junit-bom:${junitVersion}")
+	testImplementation "org.junit.jupiter:junit-jupiter:${junitVersion}"
+	
+	// https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-slf4j2-impl
+	testImplementation group: 'org.apache.logging.log4j', name: 'log4j-slf4j2-impl', version: "${slf4j2Version}"
 }
 
 java {
-	sourceCompatibility = JavaVersion.VERSION_1_8
-	targetCompatibility = JavaVersion.VERSION_1_8
+	sourceCompatibility = JavaVersion.VERSION_17
+	targetCompatibility = JavaVersion.VERSION_17
 
 	withJavadocJar()
 	withSourcesJar()

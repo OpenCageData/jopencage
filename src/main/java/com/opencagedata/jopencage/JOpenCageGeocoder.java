@@ -63,7 +63,7 @@ public class JOpenCageGeocoder {
      * @param request the request
      * @return JOpenCageResponse
      */
-    public JOpenCageResponse forward(JOpenCageForwardRequest request) {
+    public JOpenCageResponse forward(JOpenCageForwardRequest request) throws JOpenCageException {
         return sendRequest(request);
     }
 
@@ -73,7 +73,7 @@ public class JOpenCageGeocoder {
      * @param request the request
      * @return JOpenCageResponse
      */
-    public JOpenCageResponse reverse(JOpenCageReverseRequest request) {
+    public JOpenCageResponse reverse(JOpenCageReverseRequest request) throws JOpenCageException {
         return sendRequest(request);
     }
 
@@ -103,7 +103,7 @@ public class JOpenCageGeocoder {
         return uriBuilder.build();
     }
 
-    private JOpenCageResponse sendRequest(JOpenCageRequest jOpenCageRequest) {
+    private JOpenCageResponse sendRequest(JOpenCageRequest jOpenCageRequest) throws JOpenCageException {
         URI url = null;
         try {
             url = buildUri(jOpenCageRequest);
@@ -130,29 +130,46 @@ public class JOpenCageGeocoder {
             } catch (HttpResponseException e) {
                 switch (e.getStatusCode()) {
                     case 400:
-                        LOGGER.error("Invalid request (bad request; a required parameter is missing)!");
-                        break;
+                        LOGGER.error("Invalid request (bad request; a required parameter is missing; invalid coordinates; invalid version; invalid format)!");
+                        throw new BadRequestException("Invalid request (bad request; a required parameter is missing; invalid coordinates; invalid version; invalid format)!");
+                    case 401:
+                        LOGGER.error("Unable to authenticate - missing, invalid, or unknown API key!");
+                        throw new UnauthenticatedException("Unable to authenticate - missing, invalid, or unknown API key!");
                     case 402:
                         LOGGER.error("Valid request but quota exceeded (payment required)!");
-                        break;
+                        throw new QuotaExceededException("Valid request but quota exceeded (payment required)!");
                     case 403:
-                        LOGGER.error("Invalid or missing api key!");
-                        break;
+                        LOGGER.error("Forbidden (API key disabled or IP address rejected)!");
+                        throw new ForbiddenException("Forbidden (API key disabled or IP address rejected)!");
                     case 404:
                         LOGGER.error("Invalid API endpoint!");
-                        break;
+                        throw new HttpNotFoundException("Invalid API endpoint!");
+                    case 405:
+                        LOGGER.error("Method not allowed (non-GET request)!");
+                        throw new HttpMethodNotAllowedException("Method not allowed (non-GET request)!");
                     case 408:
                         LOGGER.error("Timeout; you can try again!");
-                        break;
+                        throw new TimeOutException("Timeout; you can try again!");
                     case 410:
                         LOGGER.error("Request too long!");
-                        break;
+                        throw new HttpRequestTooLongException("Request too long!");
+                    case 426:
+                        LOGGER.error("Upgrade required (unsupported TLS)!");
+                        throw new HttpUpgradeRequiredException("Upgrade required (unsupported TLS)!");
+                    case 429:
+                        LOGGER.error("Too many requests (too quickly, rate limiting)!");
+                        throw new TooManyRequestsException("Too many requests (too quickly, rate limiting)!");
+                    case 503:
+                        LOGGER.error("Internal server error!");
+                        throw new HttpServerErrorException("Internal server error!");
                 }
             } catch (IOException e) {
-                LOGGER.error("", e);
+                LOGGER.error("I/O Exception", e);
+                throw new HttpClientErrorException("I/O Exception", e);
             }
         } else {
-            LOGGER.error("No jopencage request url build!");
+            LOGGER.error("No jopencage request url built!");
+            throw new HttpClientErrorException("No jopencage request url built!");
         }
         return null;
     }
@@ -163,7 +180,7 @@ public class JOpenCageGeocoder {
      * @return boolean
      */
     public boolean isHttpsEnabled() {
-        return httpsEnabled;
+        return this.httpsEnabled;
     }
 
     /**
@@ -181,7 +198,7 @@ public class JOpenCageGeocoder {
      * @return host
      */
     public String getHost() {
-        return host;
+        return this.host;
     }
 
     /**
@@ -199,7 +216,7 @@ public class JOpenCageGeocoder {
      * @return String the path
      */
     public String getPath() {
-        return path;
+        return this.path;
     }
 
     /**
@@ -217,7 +234,7 @@ public class JOpenCageGeocoder {
      * @return String the API Key
      */
     public String getApiKey() {
-        return apiKey;
+        return this.apiKey;
     }
 
 }
