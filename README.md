@@ -1,9 +1,7 @@
 # JOpenCage
 
-:warning: This is an unstable branch that only contains SNAPSHOT versions; it is still under development.
-
 [![Maven Central](https://img.shields.io/maven-central/v/com.opencagedata/jopencage.svg?label=Maven%20Central)](https://central.sonatype.com/artifact/com.opencagedata/jopencage)
-[![UnitTests](https://github.com/OpenCageData/jopencage/actions/workflows/unit-tests.yml/badge.svg?branch=master)](https://github.com/OpenCageData/jopencage/actions)
+[![Java workflow](https://github.com/OpenCageData/jopencage/actions/workflows/java.yml/badge.svg)](https://github.com/OpenCageData/jopencage/actions/workflows/java.yml)
 [![Javadoc](https://img.shields.io/badge/JavaDoc-Online-green)](https://opencagedata.github.io/jopencage/javadoc/)
 
 [![security status](https://www.meterian.io/badge/gh/OpenCageData/jopencage/security?branch=master)](https://www.meterian.io/report/gh/OpenCageData/jopencage)
@@ -11,13 +9,16 @@
 
 This package provides a Java client to the OpenCage Geocoding API: https://opencagedata.com/api
 
+:warning: This is an unstable branch that only contains SNAPSHOT versions; it is still under development.
+The latest stable version is 2.2.2 available on MavenCentral and this [branch](https://github.com/OpenCageData/jopencage/tree/2.x)
+
 ## Tutorial
 
 You can find a comprehensive tutorial for using this package [on the OpenCage site](https://opencagedata.com/tutorials/geocode-in-java).
 
 ## Getting started
 
-Signup for a [free-trial API Key](https://opencagedata.com/users/sign_up).
+Sign up for a [free-trial API Key](https://opencagedata.com/users/sign_up).
 
 ## Usage
 
@@ -75,10 +76,6 @@ https://opencagedata.github.io/jopencage/javadoc/
 ## Libraries
 
 -   JDK 17+
--   Apache Http Client
--   FasterXml Jackson
--   Slf4j
--   JDK 8+
 -   Apache Http Client
 -   FasterXml Jackson
 -   Slf4j
