@@ -43,7 +43,7 @@ Sign up for a [free-trial API Key](https://opencagedata.com/users/sign_up).
 #### Forward
 
 ```java
-// In real live application the JOpenCageGeocoder should be a Singleton
+// In real-life application, the JOpenCageGeocoder should be a Singleton
 JOpenCageGeocoder jOpenCageGeocoder = new JOpenCageGeocoder(YOUR_API_KEY);
 
 JOpenCageForwardRequest request = new JOpenCageForwardRequest("Graz");
@@ -56,7 +56,7 @@ JOpenCageResponse response = jOpenCageGeocoder.forward(request); // try..catch o
 #### Reverse
 
 ```java
-// In real live application the JOpenCageGeocoder should be a Singleton
+// In real-life application, the JOpenCageGeocoder should be a Singleton
 JOpenCageGeocoder jOpenCageGeocoder = new JOpenCageGeocoder(YOUR_API_KEY);
 
 JOpenCageReverseRequest request = new JOpenCageReverseRequest(-22.6792, 14.5272);
@@ -82,7 +82,7 @@ https://opencagedata.github.io/jopencage/javadoc/
 
 ## Testing
 
-For running the tests you have to use your _OWN_ OpenCage Geocoding API Key. Get a free trial key at https://opencagedata.com
+For running the tests, you have to use your _OWN_ OpenCage Geocoding API Key. Get a free trial key at https://opencagedata.com
 
 ```bash
 ./gradlew -DOPENCAGE_API_KEY=<your apikey> test
@@ -91,7 +91,7 @@ For running the tests you have to use your _OWN_ OpenCage Geocoding API Key. Get
 ## Gradle
 
 ```bash
-./gradlew wrapper --gradle-version 9.2.1
+./gradlew wrapper --gradle-version 9.3.0
 ```
 
 ## Contribute
@@ -108,7 +108,7 @@ Apache 2.0. Please see [LICENSE](jopencage/blob/master/LICENSE).
 
 ## History
 
-Until July 2023 this library was maintained by [Michael Oberwasserlechner](https://github.com/moberwasserlechner). At his request due to lack of time to work on it the libary was then taken over by OpenCage GmbH. Thanks, Michael!
+Until July 2023, this library was maintained by [Michael Oberwasserlechner](https://github.com/moberwasserlechner). At his request, due to a lack of time to work on it, the library was then taken over by OpenCage GmbH. Thanks, Michael!
 
 ## Who is OpenCage GmbH?
 
@@ -117,3 +117,4 @@ Until July 2023 this library was maintained by [Michael Oberwasserlechner](https
 We run the [OpenCage Geocoding API](https://opencagedata.com/api). Learn more [about us](https://opencagedata.com/about).
 
 We also run [Geomob](https://thegeomob.com), a series of regular meetups for location based service creators, where we do our best to highlight geoinnovation. If you like geo stuff, you will probably enjoy [the Geomob podcast](https://thegeomob.com/podcast/).
+
