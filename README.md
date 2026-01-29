@@ -91,7 +91,7 @@ For running the tests, you have to use your _OWN_ OpenCage Geocoding API Key. Ge
 ## Gradle
 
 ```bash
-./gradlew wrapper --gradle-version 9.3.0
+./gradlew wrapper --gradle-version 9.3.1
 ```
 
 ## Contribute
@@ -117,4 +117,5 @@ Until July 2023, this library was maintained by [Michael Oberwasserlechner](http
 We run the [OpenCage Geocoding API](https://opencagedata.com/api). Learn more [about us](https://opencagedata.com/about).
 
 We also run [Geomob](https://thegeomob.com), a series of regular meetups for location based service creators, where we do our best to highlight geoinnovation. If you like geo stuff, you will probably enjoy [the Geomob podcast](https://thegeomob.com/podcast/).
+
 
