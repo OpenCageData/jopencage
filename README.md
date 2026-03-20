@@ -9,8 +9,9 @@
 
 This package provides a Java client to the OpenCage Geocoding API: https://opencagedata.com/api
 
-:warning: This is an unstable branch that only contains SNAPSHOT versions; it is still under development.
-The latest stable version is 2.2.2 available on MavenCentral and this [branch](https://github.com/OpenCageData/jopencage/tree/2.x)
+ℹ️ Notice: This branch contains v3.x, the latest stable major release. This version includes breaking changes. If you are migrating, please refer to the [Upgrading from 1.x or 2.x to 3.x guide](#upgrading-from-1x-or-2x-to-3x).
+
+The legacy stable version (2.2.2) remains available on Maven Central, and this [branch](https://github.com/OpenCageData/jopencage/tree/2.x), for projects not yet ready to upgrade.
 
 ## Tutorial
 
