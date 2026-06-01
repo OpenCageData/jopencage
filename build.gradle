@@ -11,9 +11,9 @@ repositories {
 
 dependencies {
 	implementation "org.apache.httpcomponents.client5:httpclient5:${httpClientVersion}"
-	implementation "com.fasterxml.jackson.core:jackson-databind:${jacksonCoreVersion}"
 	implementation "com.fasterxml.jackson.core:jackson-core:${jacksonCoreVersion}"
-	implementation "com.fasterxml.jackson.core:jackson-annotations:${jacksonAnnoVersion}"
+	implementation "com.fasterxml.jackson.core:jackson-databind:${jacksonDatabindVersion}"
+	implementation "com.fasterxml.jackson.core:jackson-annotations:${jacksonAnnotationsVersion}"
 
 	// Tests
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
