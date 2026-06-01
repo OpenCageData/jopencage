@@ -1,7 +1,7 @@
 # JOpenCage
 
 [![Maven Central](https://img.shields.io/maven-central/v/com.opencagedata/jopencage.svg?label=Maven%20Central)](https://central.sonatype.com/artifact/com.opencagedata/jopencage)
-[![Java workflow](https://github.com/OpenCageData/jopencage/actions/workflows/java.yml/badge.svg)](https://github.com/OpenCageData/jopencage/actions/workflows/java.yml)
+[![Java workflow](https://github.com/OpenCageData/jopencage/actions/workflows/java.yml/badge.svg?branch=master)](https://github.com/OpenCageData/jopencage/actions/workflows/java.yml)
 [![Javadoc](https://img.shields.io/badge/JavaDoc-Online-green)](https://opencagedata.github.io/jopencage/javadoc/)
 
 [![security status](https://www.meterian.io/badge/gh/OpenCageData/jopencage/security?branch=master)](https://www.meterian.io/report/gh/OpenCageData/jopencage)
