@@ -10,6 +10,6 @@ jobs:
             - name: Checkout
               uses: actions/checkout@v7
             - name: Meterian Scanner
-              uses: MeterianHQ/meterian-github-action@v1.0.17
+              uses: MeterianHQ/meterian-github-action@v1.0.18
               with:
                   oss: true
