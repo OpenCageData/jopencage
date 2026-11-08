@@ -21,7 +21,6 @@ You can find a comprehensive tutorial for using this package [on the OpenCage si
 
 There is an [Agent Skill for working with the OpenCage Geocoding API](https://github.com/OpenCageData/opencage-skills/) which includes a reference file for developing in Java using this package.
 
-
 ## Getting started
 
 Sign up for a [free-trial API Key](https://opencagedata.com/users/sign_up).
@@ -97,7 +96,7 @@ For running the tests, you have to use your _OWN_ OpenCage Geocoding API Key. Ge
 ## Gradle
 
 ```bash
-./gradlew wrapper --gradle-version 9.4.0
+./gradlew wrapper --gradle-version 9.9.0
 ```
 
 ## Contribute
