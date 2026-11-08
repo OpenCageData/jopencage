@@ -6,15 +6,31 @@ on:
             - master
             - main
 
+permissions:
+    contents: write
+
 jobs:
     publish:
         runs-on: ubuntu-latest
         steps:
-            - name: Deploy JavaDoc 🚀
-              uses: MathieuSoysal/Javadoc-publisher.yml@v3.0.2
+            - name: Checkout latest source
+              uses: actions/checkout@v7
+
+            - name: Set up JDK
+              uses: actions/setup-java@v6
               with:
-                  GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-                  javadoc-branch: javadoc
-                  java-version: 17
+                  distribution: "temurin"
+                  java-version: 25
+                  cache: "gradle"
+
+            - name: Generate Javadoc
+              run: |
+                  chmod +x gradlew
+                  ./gradlew javadoc
+
+            - name: Deploy JavaDoc 🚀
+              uses: JamesIves/github-pages-deploy-action@v4
+              with:
+                  branch: javadoc
+                  folder: build/docs/javadoc
                   target-folder: javadoc
-                  project: gradle
